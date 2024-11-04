@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export default function GameScreen() {
   const [input, setInput] = useState('');
   const [matchedCountries, setMatchedCountries] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(720);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showCountryList, setShowCountryList] = useState(false);
   const totalCountries = countryData.length;
