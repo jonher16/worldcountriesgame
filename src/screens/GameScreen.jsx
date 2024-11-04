@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import CountryMap from '../components/CountryMap';
 import Timer from '../components/Timer';
 import Progress from '../components/Progress';
-import countryData from '../assets/grouped_country_paths.json';
+import countryData from '../assets/updated_grouped_country_paths.json';
 import validateCountry from '../utils/validateCountry';
 import { useNavigate } from 'react-router-dom';
 
