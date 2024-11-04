@@ -56,6 +56,7 @@ const styles = {
     background: '#333',
     color: '#fff',
     minHeight: '100vh',
+    width: '100%',
     fontFamily: 'Arial, sans-serif',
     display: 'flex',
     flexDirection: 'column',

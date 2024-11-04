@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import HeatMap from '../components/HeatMap'; // Ensure this component can handle heatmap data
 import countryData from '../assets/updated_grouped_country_paths.json';
 import LoadingScreen from './LoadingScreen'; // Import the LoadingScreen component
+import { useNavigate } from 'react-router-dom';
 
 export default function RankingScreen() {
   const [playersData, setPlayersData] = useState([]);
@@ -14,6 +15,7 @@ export default function RankingScreen() {
   const [topPlayers, setTopPlayers] = useState([]);
   const [top50Players, setTop50Players] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export default function RankingScreen() {
   const calculateCountryStats = (data) => {
     const countryCounts = {};
     const totalPlayers = data.length;
-
+  
     data.forEach((player) => {
       const matchedCountries = player.matchedCountries || [];
       matchedCountries.forEach((country) => {
@@ -63,21 +65,23 @@ export default function RankingScreen() {
         countryCounts[normalizedCountry] = (countryCounts[normalizedCountry] || 0) + 1;
       });
     });
+    
+    // Calculate percentages and map normalized names to original names
+  const percentages = {};
+  const displayStats = [];
 
-    // Calculate percentages
-    const percentages = {};
-    countryData.forEach((country) => {
-      const normalizedCountry = normalizeCountryName(country.class);
-      const count = countryCounts[normalizedCountry] || 0;
-      const percentage = (count / totalPlayers) * 100;
-      percentages[normalizedCountry] = percentage;
-    });
-    setCountryPercentages(percentages);
+  countryData.forEach((country) => {
+    const normalizedCountry = normalizeCountryName(country.class);
+    const count = countryCounts[normalizedCountry] || 0;
+    const percentage = (count / totalPlayers) * 100;
+    percentages[normalizedCountry] = percentage;
+    displayStats.push([country.class, percentage]); // Store original name with percentage
+  });
 
-    // Sort countries for display
-    const sortedStats = Object.entries(percentages).sort((a, b) => b[1] - a[1]);
-    setSortedCountryStats(sortedStats);
-  };
+  setCountryPercentages(percentages); // For heatmap, using normalized keys
+  const sortedStats = displayStats.sort((a, b) => b[1] - a[1]); // Sort by percentage
+  setSortedCountryStats(sortedStats); // For display list, using original names
+};
 
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
@@ -96,6 +100,14 @@ export default function RankingScreen() {
         <LoadingScreen /> // Show LoadingScreen while data is loading
       ) : (
     <div style={styles.container}>
+        <button
+        style={styles.backButton}
+        onClick={() => navigate('/')}
+        onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+      >
+        Home
+      </button>
       <motion.h1
         style={styles.title}
         initial={{ opacity: 0 }}
@@ -183,6 +195,19 @@ const styles = {
     overflowY: 'auto',
     maxHeight: '100vh',
     width: '100vw',
+  },
+  backButton: {
+    position: 'absolute',
+    top: '20px',
+    right: '20px',
+    padding: '10px 20px',
+    fontSize: '16px',
+    backgroundColor: '#444',
+    color: '#fff',
+    border: '2px solid transparent',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'border-color 0.3s ease',
   },
   title: {
     fontSize: '48px',
