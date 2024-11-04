@@ -44,7 +44,14 @@ export default function GameScreen() {
 
   useEffect(() => {
     if (timeLeft === 0 || matchedCountries.length === totalCountries) {
-      navigate('/stats', { state: { score: matchedCountries.length, missed: totalCountries - matchedCountries.length, timeTaken: 720 - timeLeft } });
+      navigate('/stats', { 
+        state: { 
+          score: matchedCountries.length, 
+          missed: totalCountries - matchedCountries.length, 
+          timeTaken: 720 - timeLeft,
+          matchedCountries: matchedCountries, // Pass the matchedCountries array
+        } 
+      });
     }
   }, [timeLeft, matchedCountries, totalCountries, navigate]);
 
