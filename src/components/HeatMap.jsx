@@ -8,7 +8,9 @@ export default function HeatMap({ heatmapData }) {
     const percentage = heatmapData[normalizedCountry];
     if (percentage === undefined) return '#ececec'; // Default color
     const hue = (percentage * 120) / 100; // 0 (red) to 120 (green)
-    return `hsl(${hue}, 100%, 50%)`;
+    const saturation = 60; // Reduced saturation for softer colors
+    const lightness = 60; // Higher lightness for a more pleasant look
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
   return (

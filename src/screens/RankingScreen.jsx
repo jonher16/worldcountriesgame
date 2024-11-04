@@ -91,7 +91,11 @@ export default function RankingScreen() {
 
   const getColorForPercentage = (percentage) => {
     const hue = (percentage * 120) / 100; // 0 (red) to 120 (green)
-    return `hsl(${hue}, 100%, 50%)`;
+    const lightness = 60;
+    const saturation = 60; // Lower saturation for a muted color
+
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
   };
 
   return (
