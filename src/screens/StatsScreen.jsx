@@ -40,6 +40,7 @@ export default function StatsScreen() {
         missed: missed,
         timeTaken: timeTaken,
         date: new Date(),
+        matchedCountries: matchedCountries, // Include matchedCountries
       });
       setSubmissionStatus('success');
       setIsSaved(true); // Disable the submit button

@@ -2,47 +2,34 @@ import { useState } from 'react';
 import countryPaths from '../assets/grouped_country_paths.json';
 
 export default function CountryMap({ matchedCountries }) {
-  // Initialize viewBox as an array of numbers [x, y, width, height]
-  const [viewBox, setViewBox] = useState([0, 0, 2000, 857]);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const maxZoomLevel = 8; // Define maximum zoom level
-  const minZoomLevel = 1; // Define minimum zoom level (no zoom)
+  const [viewBox, setViewBox] = useState("0 0 2000 857");
+  const originalWidth = 2000;
+  const originalHeight = 857;
 
   const handleLeftClick = (event) => {
-    const svg = event.currentTarget;
-    const svgRect = svg.getBoundingClientRect();
+    const svgRect = event.target.getBoundingClientRect();
+    const clickX = ((event.clientX - svgRect.left) / svgRect.width) * originalWidth;
+    const clickY = ((event.clientY - svgRect.top) / svgRect.height) * originalHeight;
 
-    // Current viewBox values
-    const [currentX, currentY, currentWidth, currentHeight] = viewBox;
-
-    // Calculate click position relative to the current viewBox
-    const clickX = ((event.clientX - svgRect.left) / svgRect.width) * currentWidth + currentX;
-    const clickY = ((event.clientY - svgRect.top) / svgRect.height) * currentHeight + currentY;
-
-    // Determine new zoom level
-    const newZoomLevel = zoomLevel < maxZoomLevel ? zoomLevel * 2 : zoomLevel;
-
-    // Calculate new viewBox dimensions
-    const newWidth = 2000 / newZoomLevel;
-    const newHeight = 857 / newZoomLevel;
-
-    // Center the viewBox around the clicked point
-    let newX = clickX - newWidth / 2;
-    let newY = clickY - newHeight / 2;
-
-    // Ensure the new viewBox does not exceed SVG boundaries
-    newX = Math.max(0, Math.min(newX, 2000 - newWidth));
-    newY = Math.max(0, Math.min(newY, 857 - newHeight));
-
-    setViewBox([newX, newY, newWidth, newHeight]);
+    // Increase zoom level up to a maximum and reset if needed
+    const newZoomLevel = zoomLevel < 8 ? zoomLevel * 2 : 1; // Reset zoom after reaching maximum
     setZoomLevel(newZoomLevel);
+
+    // Calculate the new viewBox size based on the zoom level
+    const viewBoxWidth = originalWidth / newZoomLevel;
+    const viewBoxHeight = originalHeight / newZoomLevel;
+
+    // Set viewBox to center around the clicked point
+    const newViewBox = `${clickX - viewBoxWidth / 2} ${clickY - viewBoxHeight / 2} ${viewBoxWidth} ${viewBoxHeight}`;
+    setViewBox(newViewBox);
   };
 
   const handleRightClick = (event) => {
     event.preventDefault();
-    // Reset to initial viewBox and zoom level
-    setViewBox([0, 0, 2000, 857]);
-    setZoomLevel(minZoomLevel);
+    // Reset zoom level and viewBox to initial state
+    setZoomLevel(1);
+    setViewBox("0 0 2000 857");
   };
 
   return (
@@ -50,7 +37,7 @@ export default function CountryMap({ matchedCountries }) {
       <svg
         width="100%"
         height="100%"
-        viewBox={viewBox.join(' ')}
+        viewBox={viewBox}
         onClick={handleLeftClick}
         onContextMenu={handleRightClick} // Right-click to zoom out
       >
@@ -69,7 +56,6 @@ export default function CountryMap({ matchedCountries }) {
     </div>
   );
 }
-
 const styles = {
   container: {
     display: 'flex',
