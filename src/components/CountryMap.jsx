@@ -1,8 +1,8 @@
 // src/components/CountryMap.js
 import { useState } from 'react';
-import countryPaths from '../assets/grouped_country_paths.json';
+import countryPaths from '../assets/updated_grouped_country_paths.json';
 
-export default function CountryMap({ matchedCountries }) {
+export default function CountryMap({ matchedCountries, children }) {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [viewBox, setViewBox] = useState("0 0 2000 857");
   const originalWidth = 2000;
@@ -74,6 +74,7 @@ export default function CountryMap({ matchedCountries }) {
             />
           ))
         )}
+        {children}
       </svg>
     </div>
   );

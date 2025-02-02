@@ -8,8 +8,14 @@
       }
     ],
     "names": [
-      "Afghanistan", "Afganistan", "Republica Islamica de Afganistan"
-    ]
+      "Afghanistan",
+      "Afganistan",
+      "Republica Islamica de Afganistan"
+    ],
+    "center": {
+      "x": 1340,
+      "y": 290
+    }
   },
   {
     "class": "Angola",
@@ -25,7 +31,11 @@
     ],
     "names": [
       "Angola"
-    ]
+    ],
+    "center": {
+      "x": 1084,
+      "y": 580
+    }
   },
   {
     "class": "Albania",
@@ -37,7 +47,11 @@
     ],
     "names": [
       "Albania"
-    ]
+    ],
+    "center": {
+      "x": 1090,
+      "y": 240
+    }
   },
   {
     "class": "United Arab Emirates",
@@ -48,8 +62,15 @@
       }
     ],
     "names": [
-      "United Arab Emirates", "UAE", "Emiratos", "Emiratos Arabes Unidos"
-    ]
+      "United Arab Emirates",
+      "UAE",
+      "Emiratos",
+      "Emiratos Arabes Unidos"
+    ],
+    "center": {
+      "x": 1285,
+      "y": 350
+    }
   },
   {
     "class": "Argentina",
@@ -65,7 +86,11 @@
     ],
     "names": [
       "Argentina"
-    ]
+    ],
+    "center": {
+      "x": 640.4744279204249,
+      "y": 725.8550161359095
+    }
   },
   {
     "class": "Armenia",
@@ -77,7 +102,11 @@
     ],
     "names": [
       "Armenia"
-    ]
+    ],
+    "center": {
+      "x": 1220,
+      "y": 243
+    }
   },
   {
     "class": "Australia",
@@ -93,7 +122,11 @@
     ],
     "names": [
       "Australia"
-    ]
+    ],
+    "center": {
+      "x": 1724.665882254009,
+      "y": 665.3555354003427
+    }
   },
   {
     "class": "Austria",
@@ -105,7 +138,11 @@
     ],
     "names": [
       "Austria"
-    ]
+    ],
+    "center": {
+      "x": 1058,
+      "y": 197
+    }
   },
   {
     "class": "Azerbaijan",
@@ -120,8 +157,13 @@
       }
     ],
     "names": [
-      "Azerbaijan", "Azerbaiyan"
-    ]
+      "Azerbaijan",
+      "Azerbaiyan"
+    ],
+    "center": {
+      "x": 1235,
+      "y": 243
+    }
   },
   {
     "class": "Burundi",
@@ -133,7 +175,11 @@
     ],
     "names": [
       "Burundi"
-    ]
+    ],
+    "center": {
+      "x": 1156,
+      "y": 524
+    }
   },
   {
     "class": "Belgium",
@@ -144,8 +190,13 @@
       }
     ],
     "names": [
-      "Belgium", "Belgica"
-    ]
+      "Belgium",
+      "Belgica"
+    ],
+    "center": {
+      "x": 1010,
+      "y": 179
+    }
   },
   {
     "class": "Benin",
@@ -157,7 +208,11 @@
     ],
     "names": [
       "Benin"
-    ]
+    ],
+    "center": {
+      "x": 999,
+      "y": 438
+    }
   },
   {
     "class": "Burkina Faso",
@@ -169,7 +224,11 @@
     ],
     "names": [
       "Burkina Faso"
-    ]
+    ],
+    "center": {
+      "x": 975,
+      "y": 420
+    }
   },
   {
     "class": "Bangladesh",
@@ -180,8 +239,13 @@
       }
     ],
     "names": [
-      "Bangladesh", "Banglades"
-    ]
+      "Bangladesh",
+      "Banglades"
+    ],
+    "center": {
+      "x": 1484,
+      "y": 350
+    }
   },
   {
     "class": "Bulgaria",
@@ -193,7 +257,11 @@
     ],
     "names": [
       "Bulgaria"
-    ]
+    ],
+    "center": {
+      "x": 1115,
+      "y": 228
+    }
   },
   {
     "class": "Bosnia and Herzegovina",
@@ -204,8 +272,14 @@
       }
     ],
     "names": [
-      "Bosnia and Herzegovina", "Bosnia y Herzegovina", "Bosnia"
-    ]
+      "Bosnia and Herzegovina",
+      "Bosnia y Herzegovina",
+      "Bosnia"
+    ],
+    "center": {
+      "x": 1079,
+      "y": 220
+    }
   },
   {
     "class": "Belarus",
@@ -216,8 +290,13 @@
       }
     ],
     "names": [
-      "Belarus", "Bielorrusia"
-    ]
+      "Belarus",
+      "Bielorrusia"
+    ],
+    "center": {
+      "x": 1120,
+      "y": 160
+    }
   },
   {
     "class": "Belize",
@@ -228,8 +307,13 @@
       }
     ],
     "names": [
-      "Belize", "Belice"
-    ]
+      "Belize",
+      "Belice"
+    ],
+    "center": {
+      "x": 491,
+      "y": 390
+    }
   },
   {
     "class": "Bolivia",
@@ -241,7 +325,11 @@
     ],
     "names": [
       "Bolivia"
-    ]
+    ],
+    "center": {
+      "x": 620,
+      "y": 605
+    }
   },
   {
     "class": "Brazil",
@@ -252,8 +340,13 @@
       }
     ],
     "names": [
-      "Brazil", "Brasil"
-    ]
+      "Brazil",
+      "Brasil"
+    ],
+    "center": {
+      "x": 700,
+      "y": 570
+    }
   },
   {
     "class": "Brunei",
@@ -265,7 +358,11 @@
     ],
     "names": [
       "Brunei"
-    ]
+    ],
+    "center": {
+      "x": 1637,
+      "y": 473
+    }
   },
   {
     "class": "Bhutan",
@@ -276,8 +373,13 @@
       }
     ],
     "names": [
-      "Bhutan", "Butan"
-    ]
+      "Bhutan",
+      "Butan"
+    ],
+    "center": {
+      "x": 1482,
+      "y": 325
+    }
   },
   {
     "class": "Botswana",
@@ -288,8 +390,13 @@
       }
     ],
     "names": [
-      "Botswana", "Botsuana"
-    ]
+      "Botswana",
+      "Botsuana"
+    ],
+    "center": {
+      "x": 1120,
+      "y": 640
+    }
   },
   {
     "class": "Central African Republic",
@@ -300,8 +407,14 @@
       }
     ],
     "names": [
-      "Central African Republic", "Republica Centroafricana"
-    ]
+      "Central African Republic",
+      "Republica Centroafricana",
+      "Centroafricana"
+    ],
+    "center": {
+      "x": 1100,
+      "y": 456
+    }
   },
   {
     "class": "Canada",
@@ -429,7 +542,11 @@
     ],
     "names": [
       "Canada"
-    ]
+    ],
+    "center": {
+      "x": 522,
+      "y": 138
+    }
   },
   {
     "class": "Switzerland",
@@ -440,8 +557,13 @@
       }
     ],
     "names": [
-      "Switzerland", "Suiza"
-    ]
+      "Switzerland",
+      "Suiza"
+    ],
+    "center": {
+      "x": 1025,
+      "y": 202
+    }
   },
   {
     "class": "China",
@@ -457,7 +579,11 @@
     ],
     "names": [
       "China"
-    ]
+    ],
+    "center": {
+      "x": 1534.903423087004,
+      "y": 268.713987829815
+    }
   },
   {
     "class": "Ivory Coast",
@@ -468,8 +594,13 @@
       }
     ],
     "names": [
-      "Ivory Coast", "Costa de Marfil"
-    ]
+      "Ivory Coast",
+      "Costa de Marfil"
+    ],
+    "center": {
+      "x": 955,
+      "y": 450
+    }
   },
   {
     "class": "Cameroon",
@@ -480,8 +611,13 @@
       }
     ],
     "names": [
-      "Cameroon", "Camerun"
-    ]
+      "Cameroon",
+      "Camerun"
+    ],
+    "center": {
+      "x": 1050,
+      "y": 470
+    }
   },
   {
     "class": "Democratic Republic of the Congo",
@@ -492,8 +628,14 @@
       }
     ],
     "names": [
-      "Democratic Republic of the Congo", "Congo", "Republica Democratica del Congo"
-    ]
+      "Democratic Republic of the Congo",
+      "Congo",
+      "Republica Democratica del Congo"
+    ],
+    "center": {
+      "x": 1120,
+      "y": 520
+    }
   },
   {
     "class": "Republic of Congo",
@@ -504,8 +646,14 @@
       }
     ],
     "names": [
-      "Republic of Congo", "Congo", "Republica del Congo"
-    ]
+      "Republic of Congo",
+      "Congo",
+      "Republica del Congo"
+    ],
+    "center": {
+      "x": 1070,
+      "y": 523
+    }
   },
   {
     "class": "Colombia",
@@ -517,7 +665,11 @@
     ],
     "names": [
       "Colombia"
-    ]
+    ],
+    "center": {
+      "x": 570,
+      "y": 479
+    }
   },
   {
     "class": "Costa Rica",
@@ -529,7 +681,11 @@
     ],
     "names": [
       "Costa Rica"
-    ]
+    ],
+    "center": {
+      "x": 510,
+      "y": 436
+    }
   },
   {
     "class": "Cuba",
@@ -541,7 +697,11 @@
     ],
     "names": [
       "Cuba"
-    ]
+    ],
+    "center": {
+      "x": 555,
+      "y": 365
+    }
   },
   {
     "class": "Czech Republic",
@@ -552,8 +712,14 @@
       }
     ],
     "names": [
-      "Czech Republic", "Chequia", "Republica Checa"
-    ]
+      "Czech Republic",
+      "Chequia",
+      "Republica Checa"
+    ],
+    "center": {
+      "x": 1058,
+      "y": 183
+    }
   },
   {
     "class": "Germany",
@@ -564,8 +730,13 @@
       }
     ],
     "names": [
-      "Germany", "Alemania"
-    ]
+      "Germany",
+      "Alemania"
+    ],
+    "center": {
+      "x": 1035,
+      "y": 175
+    }
   },
   {
     "class": "Djibouti",
@@ -576,8 +747,13 @@
       }
     ],
     "names": [
-      "Djibouti", "Yibuti"
-    ]
+      "Djibouti",
+      "Yibuti"
+    ],
+    "center": {
+      "x": 1226,
+      "y": 425
+    }
   },
   {
     "class": "Denmark",
@@ -624,8 +800,13 @@
       }
     ],
     "names": [
-      "Denmark", "Dinamarca"
-    ]
+      "Denmark",
+      "Dinamarca"
+    ],
+    "center": {
+      "x": 1029,
+      "y": 144
+    }
   },
   {
     "class": "Dominican Republic",
@@ -636,8 +817,14 @@
       }
     ],
     "names": [
-      "Dominican Republic", "Dominicana", "Republica Dominicana"
-    ]
+      "Dominican Republic",
+      "Dominicana",
+      "Republica Dominicana"
+    ],
+    "center": {
+      "x": 595,
+      "y": 379
+    }
   },
   {
     "class": "Algeria",
@@ -648,8 +835,13 @@
       }
     ],
     "names": [
-      "Algeria", "Argelia"
-    ]
+      "Algeria",
+      "Argelia"
+    ],
+    "center": {
+      "x": 1000,
+      "y": 330
+    }
   },
   {
     "class": "Ecuador",
@@ -661,7 +853,11 @@
     ],
     "names": [
       "Ecuador"
-    ]
+    ],
+    "center": {
+      "x": 540,
+      "y": 510
+    }
   },
   {
     "class": "Egypt",
@@ -672,8 +868,13 @@
       }
     ],
     "names": [
-      "Egypt", "Egipto"
-    ]
+      "Egypt",
+      "Egipto"
+    ],
+    "center": { 
+      "x": 1150,
+      "y": 320
+    }
   },
   {
     "class": "Eritrea",
@@ -685,7 +886,11 @@
     ],
     "names": [
       "Eritrea"
-    ]
+    ],
+    "center": {
+      "x": 1200,
+      "y": 400
+    }
   },
   {
     "class": "Estonia",
@@ -697,7 +902,11 @@
     ],
     "names": [
       "Estonia"
-    ]
+    ],
+    "center": {
+      "x": 1105,
+      "y": 129
+    }
   },
   {
     "class": "Ethiopia",
@@ -708,8 +917,13 @@
       }
     ],
     "names": [
-      "Ethiopia", "Etiopia"
-    ]
+      "Ethiopia",
+      "Etiopia"
+    ],
+    "center": {
+      "x": 1200,
+      "y": 450
+    }
   },
   {
     "class": "Finland",
@@ -720,8 +934,13 @@
       }
     ],
     "names": [
-      "Finland", "Finlandia"
-    ]
+      "Finland",
+      "Finlandia"
+    ],
+    "center": {
+      "x": 1100,
+      "y": 110
+    }
   },
   {
     "class": "Gabon",
@@ -733,7 +952,11 @@
     ],
     "names": [
       "Gabon"
-    ]
+    ],
+    "center": {
+      "x": 1050,
+      "y": 505
+    }
   },
   {
     "class": "United Kingdom",
@@ -832,8 +1055,14 @@
       }
     ],
     "names": [
-      "United Kingdom", "UK", "Great Britain"
-    ]
+      "United Kingdom",
+      "UK",
+      "Great Britain"
+    ],
+    "center": {
+      "x": 973.8578578705519,
+      "y": 158.64099704227138
+    }
   },
   {
     "class": "Georgia",
@@ -845,7 +1074,11 @@
     ],
     "names": [
       "Georgia"
-    ]
+    ],
+    "center": {
+      "x": 1210,
+      "y": 232
+    }
   },
   {
     "class": "Ghana",
@@ -857,7 +1090,11 @@
     ],
     "names": [
       "Ghana"
-    ]
+    ],
+    "center": {
+      "x": 980,
+      "y": 450
+    }
   },
   {
     "class": "Guinea",
@@ -869,7 +1106,11 @@
     ],
     "names": [
       "Guinea"
-    ]
+    ],
+    "center": {
+      "x": 920,
+      "y": 430
+    }
   },
   {
     "class": "The Gambia",
@@ -880,8 +1121,13 @@
       }
     ],
     "names": [
-      "The Gambia", "Gambia"
-    ]
+      "The Gambia",
+      "Gambia"
+    ],
+    "center": {
+      "x": 900,
+      "y": 415
+    }
   },
   {
     "class": "Guinea-Bissau",
@@ -892,8 +1138,13 @@
       }
     ],
     "names": [
-      "Guinea-Bissau", "Guinea Bissau"
-    ]
+      "Guinea-Bissau",
+      "Guinea Bissau"
+    ],
+    "center": {
+      "x": 900,
+      "y": 425
+    }
   },
   {
     "class": "Equatorial Guinea",
@@ -904,8 +1155,13 @@
       }
     ],
     "names": [
-      "Equatorial Guinea", "Guinea Ecuatorial"
-    ]
+      "Equatorial Guinea",
+      "Guinea Ecuatorial"
+    ],
+    "center": {
+      "x": 1045,
+      "y": 491
+    }
   },
   {
     "class": "Greece",
@@ -920,8 +1176,13 @@
       }
     ],
     "names": [
-      "Greece", "Grecia"
-    ]
+      "Greece",
+      "Grecia"
+    ],
+    "center": {
+      "x": 1100,
+      "y": 249
+    }
   },
   {
     "class": "Guatemala",
@@ -933,7 +1194,11 @@
     ],
     "names": [
       "Guatemala"
-    ]
+    ],
+    "center": {
+      "x": 477,
+      "y": 405
+    }
   },
   {
     "class": "Guyana",
@@ -945,7 +1210,11 @@
     ],
     "names": [
       "Guyana"
-    ]
+    ],
+    "center": {
+      "x": 652,
+      "y": 465
+    }
   },
   {
     "class": "Honduras",
@@ -957,7 +1226,11 @@
     ],
     "names": [
       "Honduras"
-    ]
+    ],
+    "center": {
+      "x": 500,
+      "y": 407
+    }
   },
   {
     "class": "Croatia",
@@ -968,8 +1241,13 @@
       }
     ],
     "names": [
-      "Croatia", "Croacia"
-    ]
+      "Croatia",
+      "Croacia"
+    ],
+    "center": {
+      "x": 1070,
+      "y": 208
+    }
   },
   {
     "class": "Haiti",
@@ -981,7 +1259,11 @@
     ],
     "names": [
       "Haiti"
-    ]
+    ],
+    "center": {
+      "x": 584,
+      "y": 379
+    }
   },
   {
     "class": "Hungary",
@@ -992,8 +1274,13 @@
       }
     ],
     "names": [
-      "Hungary", "Hungria"
-    ]
+      "Hungary",
+      "Hungria"
+    ],
+    "center": {
+      "x": 1080,
+      "y": 201
+    }
   },
   {
     "class": "Indonesia",
@@ -1053,7 +1340,11 @@
     ],
     "names": [
       "Indonesia"
-    ]
+    ],
+    "center": {
+      "x": 1615,
+      "y": 550
+    }
   },
   {
     "class": "India",
@@ -1064,8 +1355,13 @@
       }
     ],
     "names": [
-      "India", "Bharat"
-    ]
+      "India",
+      "Bharat"
+    ],
+    "center": {
+      "x": 1420,
+      "y": 350
+    }
   },
   {
     "class": "Ireland",
@@ -1076,8 +1372,13 @@
       }
     ],
     "names": [
-      "Ireland", "Irlanda"
-    ]
+      "Ireland",
+      "Irlanda"
+    ],
+    "center": {
+      "x": 948,
+      "y": 162
+    }
   },
   {
     "class": "Iran",
@@ -1089,7 +1390,11 @@
     ],
     "names": [
       "Iran"
-    ]
+    ],
+    "center": {
+      "x": 1280,
+      "y": 290
+    }
   },
   {
     "class": "Iraq",
@@ -1101,7 +1406,11 @@
     ],
     "names": [
       "Iraq"
-    ]
+    ],
+    "center": {
+      "x": 1220,
+      "y": 290
+    }
   },
   {
     "class": "Iceland",
@@ -1112,8 +1421,13 @@
       }
     ],
     "names": [
-      "Iceland", "Islandia"
-    ]
+      "Iceland",
+      "Islandia"
+    ],
+    "center": {
+      "x": 915,
+      "y": 92
+    }
   },
   {
     "class": "Israel",
@@ -1125,7 +1439,11 @@
     ],
     "names": [
       "Israel"
-    ]
+    ],
+    "center": {
+      "x": 1175,
+      "y": 300
+    }
   },
   {
     "class": "Italy",
@@ -1144,8 +1462,13 @@
       }
     ],
     "names": [
-      "Italy", "Italia"
-    ]
+      "Italy",
+      "Italia"
+    ],
+    "center": {
+      "x": 1045,
+      "y": 223
+    }
   },
   {
     "class": "Jamaica",
@@ -1157,7 +1480,11 @@
     ],
     "names": [
       "Jamaica"
-    ]
+    ],
+    "center": {
+      "x": 555,
+      "y": 386
+    }
   },
   {
     "class": "Jordan",
@@ -1169,7 +1496,11 @@
     ],
     "names": [
       "Jordan"
-    ]
+    ],
+    "center": {
+      "x": 1184,
+      "y": 305
+    }
   },
   {
     "class": "Japan",
@@ -1188,8 +1519,13 @@
       }
     ],
     "names": [
-      "Japan","Japon"
-    ]
+      "Japan",
+      "Japon"
+    ],
+    "center": {
+      "x": 1720,
+      "y": 270
+    }
   },
   {
     "class": "Kazakhstan",
@@ -1200,8 +1536,13 @@
       }
     ],
     "names": [
-      "Kazakhstan", "Kazajistan"
-    ]
+      "Kazakhstan",
+      "Kazajistan"
+    ],
+    "center": {
+      "x": 1350,
+      "y": 200
+    }
   },
   {
     "class": "Kenya",
@@ -1212,8 +1553,13 @@
       }
     ],
     "names": [
-      "Kenya", "Kenia"
-    ]
+      "Kenya",
+      "Kenia"
+    ],
+    "center": {
+      "x": 1200,
+      "y": 500
+    }
   },
   {
     "class": "Kyrgyzstan",
@@ -1224,8 +1570,13 @@
       }
     ],
     "names": [
-      "Kyrgyzstan","Kirguistan"
-    ]
+      "Kyrgyzstan",
+      "Kirguistan"
+    ],
+    "center": {
+      "x": 1380,
+      "y": 235
+    }
   },
   {
     "class": "Cambodia",
@@ -1236,8 +1587,13 @@
       }
     ],
     "names": [
-      "Cambodia","Camboya"
-    ]
+      "Cambodia",
+      "Camboya"
+    ],
+    "center": {
+      "x": 1575,
+      "y": 420
+    }
   },
   {
     "class": "South Korea",
@@ -1248,8 +1604,14 @@
       }
     ],
     "names": [
-      "South Korea", "Corea del Sur", "Republica de Corea"
-    ]
+      "South Korea",
+      "Corea del Sur",
+      "Republica de Corea"
+    ],
+    "center": {
+      "x": 1665,
+      "y": 265
+    }
   },
   {
     "class": "Kuwait",
@@ -1261,7 +1623,11 @@
     ],
     "names": [
       "Kuwait"
-    ]
+    ],
+    "center": {
+      "x": 1246,
+      "y": 314
+    }
   },
   {
     "class": "Lao",
@@ -1272,8 +1638,13 @@
       }
     ],
     "names": [
-      "Lao", "Laos"
-    ]
+      "Lao",
+      "Laos"
+    ],
+    "center": {
+      "x": 1557,
+      "y": 375
+    }
   },
   {
     "class": "Lebanon",
@@ -1284,8 +1655,13 @@
       }
     ],
     "names": [
-      "Lebanon", "Libano"
-    ]
+      "Lebanon",
+      "Libano"
+    ],
+    "center": {
+      "x": 1178,
+      "y": 285
+    }
   },
   {
     "class": "Liberia",
@@ -1297,7 +1673,11 @@
     ],
     "names": [
       "Liberia"
-    ]
+    ],
+    "center": {
+      "x": 933,
+      "y": 462
+    }
   },
   {
     "class": "Libya",
@@ -1308,8 +1688,13 @@
       }
     ],
     "names": [
-      "Libya", "Libia"
-    ]
+      "Libya",
+      "Libia"
+    ],
+    "center": {
+      "x": 1090,
+      "y": 330
+    }
   },
   {
     "class": "Sri Lanka",
@@ -1321,7 +1706,11 @@
     ],
     "names": [
       "Sri Lanka"
-    ]
+    ],
+    "center": {
+      "x": 1443,
+      "y": 453
+    }
   },
   {
     "class": "Lesotho",
@@ -1332,8 +1721,13 @@
       }
     ],
     "names": [
-      "Lesotho", "Lesoto"
-    ]
+      "Lesotho",
+      "Lesoto"
+    ],
+    "center": {
+      "x": 1140,
+      "y": 692
+    }
   },
   {
     "class": "Lithuania",
@@ -1344,8 +1738,13 @@
       }
     ],
     "names": [
-      "Lithuania", "Lituania"
-    ]
+      "Lithuania",
+      "Lituania"
+    ],
+    "center": {
+      "x": 1100,
+      "y": 150
+    }
   },
   {
     "class": "Luxembourg",
@@ -1356,8 +1755,13 @@
       }
     ],
     "names": [
-      "Luxembourg", "Luxemburgo"
-    ]
+      "Luxembourg",
+      "Luxemburgo"
+    ],
+    "center": {
+      "x": 1015,
+      "y": 184
+    }
   },
   {
     "class": "Latvia",
@@ -1368,8 +1772,13 @@
       }
     ],
     "names": [
-      "Latvia", "Letonia"
-    ]
+      "Latvia",
+      "Letonia"
+    ],
+    "center": {
+      "x": 1105,
+      "y": 140
+    }
   },
   {
     "class": "Morocco",
@@ -1380,8 +1789,13 @@
       }
     ],
     "names": [
-      "Morocco", "Marruecos"
-    ]
+      "Morocco",
+      "Marruecos"
+    ],
+    "center": {
+      "x": 943,
+      "y": 300
+    }
   },
   {
     "class": "Moldova",
@@ -1392,8 +1806,13 @@
       }
     ],
     "names": [
-      "Moldova", "Moldavia"
-    ]
+      "Moldova",
+      "Moldavia"
+    ],
+    "center": {
+      "x": 1130,
+      "y": 200
+    }
   },
   {
     "class": "Madagascar",
@@ -1405,7 +1824,11 @@
     ],
     "names": [
       "Madagascar"
-    ]
+    ],
+    "center": {
+      "x": 1245,
+      "y": 632
+    }
   },
   {
     "class": "Mexico",
@@ -1417,7 +1840,11 @@
     ],
     "names": [
       "Mexico"
-    ]
+    ],
+    "center": {
+      "x": 420,
+      "y": 350
+    }
   },
   {
     "class": "Macedonia",
@@ -1429,7 +1856,11 @@
     ],
     "names": [
       "Macedonia"
-    ]
+    ],
+    "center": {
+      "x": 1100,
+      "y": 235
+    }
   },
   {
     "class": "Mali",
@@ -1441,7 +1872,11 @@
     ],
     "names": [
       "Mali"
-    ]
+    ],
+    "center": {
+      "x": 975,
+      "y": 380
+    }
   },
   {
     "class": "Myanmar",
@@ -1452,8 +1887,14 @@
       }
     ],
     "names": [
-      "Myanmar", "Burma", "Birmania"
-    ]
+      "Myanmar",
+      "Burma",
+      "Birmania"
+    ],
+    "center": {
+      "x": 1520,
+      "y": 370
+    }
   },
   {
     "class": "Montenegro",
@@ -1465,7 +1906,11 @@
     ],
     "names": [
       "Montenegro"
-    ]
+    ],
+    "center": {
+      "x": 1086,
+      "y": 228
+    }
   },
   {
     "class": "Mongolia",
@@ -1477,7 +1922,11 @@
     ],
     "names": [
       "Mongolia"
-    ]
+    ],
+    "center": {
+      "x": 1500,
+      "y": 200
+    }
   },
   {
     "class": "Mozambique",
@@ -1489,7 +1938,11 @@
     ],
     "names": [
       "Mozambique"
-    ]
+    ],
+    "center": {
+      "x": 1170,
+      "y": 650
+    }
   },
   {
     "class": "Mauritania",
@@ -1501,7 +1954,11 @@
     ],
     "names": [
       "Mauritania"
-    ]
+    ],
+    "center": {
+      "x": 925,
+      "y": 380
+    }
   },
   {
     "class": "Malawi",
@@ -1513,7 +1970,11 @@
     ],
     "names": [
       "Malawi"
-    ]
+    ],
+    "center": {
+      "x": 1176,
+      "y": 585
+    }
   },
   {
     "class": "Malaysia",
@@ -1528,8 +1989,13 @@
       }
     ],
     "names": [
-      "Malaysia", "Malasia"
-    ]
+      "Malaysia",
+      "Malasia"
+    ],
+    "center": {
+      "x": 1565,
+      "y": 479
+    }
   },
   {
     "class": "Namibia",
@@ -1541,7 +2007,11 @@
     ],
     "names": [
       "Namibia"
-    ]
+    ],
+    "center": {
+      "x": 1080,
+      "y": 640
+    }
   },
   {
     "class": "Niger",
@@ -1553,7 +2023,11 @@
     ],
     "names": [
       "Niger"
-    ]
+    ],
+    "center": {
+      "x": 1030,
+      "y": 400
+    }
   },
   {
     "class": "Nigeria",
@@ -1565,7 +2039,11 @@
     ],
     "names": [
       "Nigeria"
-    ]
+    ],
+    "center": {
+      "x": 1030,
+      "y": 438
+    }
   },
   {
     "class": "Nicaragua",
@@ -1577,7 +2055,11 @@
     ],
     "names": [
       "Nicaragua"
-    ]
+    ],
+    "center": {
+      "x": 508,
+      "y": 420
+    }
   },
   {
     "class": "Norway",
@@ -1600,8 +2082,13 @@
       }
     ],
     "names": [
-      "Norway", "Noruega"
-    ]
+      "Norway",
+      "Noruega"
+    ],
+    "center": {
+      "x": 1020,
+      "y": 115
+    }
   },
   {
     "class": "Nepal",
@@ -1613,7 +2100,11 @@
     ],
     "names": [
       "Nepal"
-    ]
+    ],
+    "center": {
+      "x": 1445,
+      "y": 320
+    }
   },
   {
     "class": "Oman",
@@ -1629,7 +2120,11 @@
     ],
     "names": [
       "Oman"
-    ]
+    ],
+    "center": {
+      "x": 1298.380766855121,
+      "y": 369.7418921685408
+    }
   },
   {
     "class": "Pakistan",
@@ -1641,7 +2136,11 @@
     ],
     "names": [
       "Pakistan"
-    ]
+    ],
+    "center": {
+      "x": 1368,
+      "y": 310
+    }
   },
   {
     "class": "Panama",
@@ -1653,7 +2152,11 @@
     ],
     "names": [
       "Panama"
-    ]
+    ],
+    "center": {
+      "x": 528,
+      "y": 448
+    }
   },
   {
     "class": "Peru",
@@ -1665,7 +2168,11 @@
     ],
     "names": [
       "Peru"
-    ]
+    ],
+    "center": {
+      "x": 560,
+      "y": 570
+    }
   },
   {
     "class": "Philippines",
@@ -1700,8 +2207,13 @@
       }
     ],
     "names": [
-      "Philippines", "Filipinas"
-    ]
+      "Philippines",
+      "Filipinas"
+    ],
+    "center": {
+      "x": 1667.813049570124,
+      "y": 400.71969429234076
+    }
   },
   {
     "class": "Papua New Guinea",
@@ -1724,8 +2236,13 @@
       }
     ],
     "names": [
-      "Papua New Guinea", "Papua Nueva Guinea"
-    ]
+      "Papua New Guinea",
+      "Papua Nueva Guinea"
+    ],
+    "center": {
+      "x": 1800,
+      "y": 540
+    }
   },
   {
     "class": "Poland",
@@ -1736,8 +2253,13 @@
       }
     ],
     "names": [
-      "Poland", "Polonia"
-    ]
+      "Poland",
+      "Polonia"
+    ],
+   "center": {
+      "x": 1080,
+      "y": 168
+    }
   },
   {
     "class": "North Korea",
@@ -1748,8 +2270,15 @@
       }
     ],
     "names": [
-      "North Korea", "Corea del Norte", "Republica Popular Democratica de Corea", "DPRK"
-    ]
+      "North Korea",
+      "Corea del Norte",
+      "Republica Popular Democratica de Corea",
+      "DPRK"
+    ],
+    "center": {
+      "x": 1649,
+      "y": 250
+    }
   },
   {
     "class": "Paraguay",
@@ -1761,7 +2290,11 @@
     ],
     "names": [
       "Paraguay"
-    ]
+    ],
+    "center": {
+      "x": 652,
+      "y": 640
+    }
   },
   {
     "class": "Palestine",
@@ -1772,8 +2305,13 @@
       }
     ],
     "names": [
-      "Palestine", "Palestina"
-    ]
+      "Palestine",
+      "Palestina"
+    ],
+    "center": {
+      "x": 1177,
+      "y": 297
+    }
   },
   {
     "class": "Qatar",
@@ -1785,7 +2323,11 @@
     ],
     "names": [
       "Qatar"
-    ]
+    ],
+    "center": {
+      "x": 1269,
+      "y": 340
+    }
   },
   {
     "class": "Romania",
@@ -1796,8 +2338,13 @@
       }
     ],
     "names": [
-      "Romania", "Rumania"
-    ]
+      "Romania",
+      "Rumania"
+    ],
+    "center": {
+      "x": 1110,
+      "y": 210
+    }
   },
   {
     "class": "Rwanda",
@@ -1808,8 +2355,13 @@
       }
     ],
     "names": [
-      "Rwanda", "Ruanda"
-    ]
+      "Rwanda",
+      "Ruanda"
+    ],
+    "center": {
+      "x": 1156,
+      "y": 515
+    }
   },
   {
     "class": "Western Sahara",
@@ -1820,8 +2372,13 @@
       }
     ],
     "names": [
-      "Western Sahara", "Sahara Occidental"
-    ]
+      "Western Sahara",
+      "Sahara Occidental"
+    ],
+    "center": {
+      "x": 915,
+      "y": 350
+    }
   },
   {
     "class": "Saudi Arabia",
@@ -1832,8 +2389,13 @@
       }
     ],
     "names": [
-      "Saudi Arabia", "Arabia Saudi"
-    ]
+      "Saudi Arabia",
+      "Arabia Saudi"
+    ],
+    "center": {
+      "x": 1230,
+      "y": 350
+    }
   },
   {
     "class": "Sudan",
@@ -1845,7 +2407,11 @@
     ],
     "names": [
       "Sudan"
-    ]
+    ],
+    "center": {
+      "x": 1150,
+      "y": 400
+    }
   },
   {
     "class": "South Sudan",
@@ -1856,8 +2422,13 @@
       }
     ],
     "names": [
-      "South Sudan", "Sudan del Sur"
-    ]
+      "South Sudan",
+      "Sudan del Sur"
+    ],
+    "center": {
+      "x": 1150,
+      "y": 455
+    }
   },
   {
     "class": "Senegal",
@@ -1869,7 +2440,11 @@
     ],
     "names": [
       "Senegal"
-    ]
+    ],
+    "center": {
+      "x": 900,
+      "y": 405
+    }
   },
   {
     "class": "Sierra Leone",
@@ -1880,8 +2455,13 @@
       }
     ],
     "names": [
-      "Sierra Leone", "Sierra Leona"
-    ]
+      "Sierra Leone",
+      "Sierra Leona"
+    ],
+    "center": {
+      "x": 919,
+      "y": 450
+    }
   },
   {
     "class": "El Salvador",
@@ -1893,7 +2473,11 @@
     ],
     "names": [
       "El Salvador"
-    ]
+    ],
+    "center": {
+      "x": 487,
+      "y": 414
+    }
   },
   {
     "class": "Serbia",
@@ -1905,7 +2489,11 @@
     ],
     "names": [
       "Serbia"
-    ]
+    ],
+    "center": {
+      "x": 1090,
+      "y": 215
+    }
   },
   {
     "class": "Suriname",
@@ -1916,8 +2504,13 @@
       }
     ],
     "names": [
-      "Suriname", "Surinam"
-    ]
+      "Suriname",
+      "Surinam"
+    ],
+    "center": {
+      "x": 670,
+      "y": 475
+    }
   },
   {
     "class": "Slovakia",
@@ -1928,8 +2521,13 @@
       }
     ],
     "names": [
-      "Slovakia", "Eslovaquia"
-    ]
+      "Slovakia",
+      "Eslovaquia"
+    ],
+    "center": {
+      "x": 1080,
+      "y": 190
+    }
   },
   {
     "class": "Slovenia",
@@ -1940,8 +2538,13 @@
       }
     ],
     "names": [
-      "Slovenia", "Eslovenia"
-    ]
+      "Slovenia",
+      "Eslovenia"
+    ],
+    "center": {
+      "x": 1062,
+      "y": 206
+    }
   },
   {
     "class": "Sweden",
@@ -1952,8 +2555,13 @@
       }
     ],
     "names": [
-      "Sweden", "Suecia"
-    ]
+      "Sweden",
+      "Suecia"
+    ],
+    "center": {
+      "x": 1050,
+      "y": 135
+    }
   },
   {
     "class": "Swaziland",
@@ -1964,8 +2572,15 @@
       }
     ],
     "names": [
-      "Swaziland","Eswatini", "Suazilandia", "Esuatini"
-    ]
+      "Swaziland",
+      "Eswatini",
+      "Suazilandia",
+      "Esuatini"
+    ],
+    "center": {
+      "x": 1160,
+      "y": 673
+    }
   },
   {
     "class": "Syria",
@@ -1976,8 +2591,13 @@
       }
     ],
     "names": [
-      "Syria", "Siria"
-    ]
+      "Syria",
+      "Siria"
+    ],
+    "center": {
+      "x": 1195,
+      "y": 275
+    }
   },
   {
     "class": "Chad",
@@ -1989,7 +2609,11 @@
     ],
     "names": [
       "Chad"
-    ]
+    ],
+    "center": {
+      "x": 1090,
+      "y": 400
+    }
   },
   {
     "class": "Togo",
@@ -2001,7 +2625,11 @@
     ],
     "names": [
       "Togo"
-    ]
+    ],
+    "center": {
+      "x": 992,
+      "y": 450
+    }
   },
   {
     "class": "Thailand",
@@ -2012,8 +2640,13 @@
       }
     ],
     "names": [
-      "Thailand", "Tailandia"
-    ]
+      "Thailand",
+      "Tailandia"
+    ],
+    "center": {
+      "x": 1557,
+      "y": 400
+    }
   },
   {
     "class": "Tajikistan",
@@ -2025,7 +2658,11 @@
     ],
     "names": [
       "Tajikistan"
-    ]
+    ],
+    "center": {
+      "x": 1368,
+      "y": 255
+    }
   },
   {
     "class": "Turkmenistan",
@@ -2037,7 +2674,11 @@
     ],
     "names": [
       "Turkmenistan"
-    ]
+    ],
+    "center": {
+      "x": 1300,
+      "y": 250
+    }
   },
   {
     "class": "Timor-Leste",
@@ -2048,8 +2689,14 @@
       }
     ],
     "names": [
-      "Timor-Leste", "Timor Oriental"
-    ]
+      "Timor-Leste",
+      "Timor Oriental",
+      "Timor"
+    ],
+    "center": {
+      "x": 1700,
+      "y": 557
+    }
   },
   {
     "class": "Tunisia",
@@ -2060,8 +2707,13 @@
       }
     ],
     "names": [
-      "Tunisia","Tunez"
-    ]
+      "Tunisia",
+      "Tunez"
+    ],
+    "center": {
+      "x": 1037,
+      "y": 275
+    }
   },
   {
     "class": "Turkey",
@@ -2076,8 +2728,13 @@
       }
     ],
     "names": [
-      "Turkey","Turquia"
-    ]
+      "Turkey",
+      "Turquia"
+    ],
+    "center": {
+      "x": 1172.1465320137866,
+      "y": 251.64458737808718
+    }
   },
   {
     "class": "Taiwan",
@@ -2089,7 +2746,11 @@
     ],
     "names": [
       "Taiwan"
-    ]
+    ],
+    "center": {
+      "x": 1655,
+      "y": 350
+    }
   },
   {
     "class": "Tanzania",
@@ -2101,7 +2762,11 @@
     ],
     "names": [
       "Tanzania"
-    ]
+    ],
+    "center": {
+      "x": 1170,
+      "y": 540
+    }
   },
   {
     "class": "Uganda",
@@ -2113,7 +2778,11 @@
     ],
     "names": [
       "Uganda"
-    ]
+    ],
+    "center": {
+      "x": 1170,
+      "y": 490
+    }
   },
   {
     "class": "Ukraine",
@@ -2124,8 +2793,13 @@
       }
     ],
     "names": [
-      "Ukraine", "Ucrania"
-    ]
+      "Ukraine",
+      "Ucrania"
+    ],
+    "center": {
+      "x": 1120,
+      "y": 183
+    }
   },
   {
     "class": "Uruguay",
@@ -2137,7 +2811,11 @@
     ],
     "names": [
       "Uruguay"
-    ]
+    ],
+    "center": {
+      "x": 685,
+      "y": 712
+    }
   },
   {
     "class": "Uzbekistan",
@@ -2149,7 +2827,11 @@
     ],
     "names": [
       "Uzbekistan"
-    ]
+    ],
+    "center": {
+      "x": 1320,
+      "y": 240
+    }
   },
   {
     "class": "Venezuela",
@@ -2161,7 +2843,11 @@
     ],
     "names": [
       "Venezuela"
-    ]
+    ],
+    "center": {
+      "x": 610,
+      "y": 448
+    }
   },
   {
     "class": "Vietnam",
@@ -2173,7 +2859,11 @@
     ],
     "names": [
       "Vietnam"
-    ]
+    ],
+    "center": {
+      "x": 1574,
+      "y": 370
+    }
   },
   {
     "class": "Yemen",
@@ -2185,7 +2875,11 @@
     ],
     "names": [
       "Yemen"
-    ]
+    ],
+    "center": {
+      "x": 1240,
+      "y": 405
+    }
   },
   {
     "class": "Zambia",
@@ -2197,7 +2891,11 @@
     ],
     "names": [
       "Zambia"
-    ]
+    ],
+    "center": {
+      "x": 1130,
+      "y": 600
+    }
   },
   {
     "class": "Zimbabwe",
@@ -2208,8 +2906,13 @@
       }
     ],
     "names": [
-      "Zimbabwe", "Zimbabue"
-    ]
+      "Zimbabwe",
+      "Zimbabue"
+    ],
+    "center": {
+      "x": 1150,
+      "y": 620
+    }
   },
   {
     "class": "Somalia",
@@ -2221,7 +2924,11 @@
     ],
     "names": [
       "Somalia"
-    ]
+    ],
+    "center": {
+      "x": 1260,
+      "y": 440
+    }
   },
   {
     "class": "Kosovo",
@@ -2233,7 +2940,11 @@
     ],
     "names": [
       "Kosovo"
-    ]
+    ],
+    "center": {
+      "x": 1095,
+      "y": 230
+    }
   },
   {
     "class": "South Africa",
@@ -2244,8 +2955,13 @@
       }
     ],
     "names": [
-      "South Africa", "Sudafrica"
-    ]
+      "South Africa",
+      "Sudafrica"
+    ],
+    "center": {
+      "x": 1110,
+      "y": 700
+    }
   },
   {
     "class": "New Zealand",
@@ -2260,8 +2976,13 @@
       }
     ],
     "names": [
-      "New Zealand", "Nueva Zelanda"
-    ]
+      "New Zealand",
+      "Nueva Zelanda"
+    ],
+    "center": {
+      "x": 1858.1537824567292,
+      "y": 783.7253401145429
+    }
   },
   {
     "class": "Chile",
@@ -2277,7 +2998,11 @@
     ],
     "names": [
       "Chile"
-    ]
+    ],
+    "center": {
+      "x": 604,
+      "y": 737
+    }
   },
   {
     "class": "Netherlands",
@@ -2312,8 +3037,14 @@
       }
     ],
     "names": [
-      "Netherlands", "Holanda", "Paises Bajos"
-    ]
+      "Netherlands",
+      "Holanda",
+      "Paises Bajos"
+    ],
+    "center": {
+      "x": 1012,
+      "y": 168
+    }
   },
   {
     "class": "Portugal",
@@ -2325,7 +3056,11 @@
     ],
     "names": [
       "Portugal"
-    ]
+    ],
+    "center": {
+      "x": 943,
+      "y": 250
+    }
   },
   {
     "class": "Russia",
@@ -2372,8 +3107,13 @@
       }
     ],
     "names": [
-      "Russia", "Rusia"
-    ]
+      "Russia",
+      "Rusia"
+    ],
+    "center": {
+      "x": 1423.437325607527,
+      "y": 117.35624734070731
+    }
   },
   {
     "class": "Spain",
@@ -2412,8 +3152,15 @@
       }
     ],
     "names": [
-      "Spain", "Espana", "España", "Reino de España"
-    ]
+      "Spain",
+      "Espana",
+      "Espa\u00f1a",
+      "Reino de Espa\u00f1a"
+    ],
+    "center": {
+      "x": 965,
+      "y": 245
+    }
   },
   {
     "class": "France",
@@ -2556,8 +3303,13 @@
       }
     ],
     "names": [
-      "France", "Francia"
-    ]
+      "France",
+      "Francia"
+    ],
+    "center": {
+      "x": 998,
+      "y": 203
+    }
   },
   {
     "class": "United States",
@@ -2664,8 +3416,17 @@
       }
     ],
     "names": [
-      "United States", "United States of America", "Estados Unidos", "Estados Unidos de America","USA", "EEUU"
-    ]
+      "United States",
+      "United States of America",
+      "Estados Unidos",
+      "Estados Unidos de America",
+      "USA",
+      "EEUU"
+    ],
+    "center": {
+      "x": 467,
+      "y": 250
+    }
   },
   {
     "class": "Antigua and Barbuda",
@@ -2680,8 +3441,14 @@
       }
     ],
     "names": [
-      "Antigua and Barbuda", "Antigua", "Antigua y Barbuda"
-    ]
+      "Antigua and Barbuda",
+      "Antigua",
+      "Antigua y Barbuda"
+    ],
+    "center": {
+      "x": 640,
+      "y": 392
+    }
   },
   {
     "class": "Bahrain",
@@ -2692,8 +3459,13 @@
       }
     ],
     "names": [
-      "Bahrain", "Barein"
-    ]
+      "Bahrain",
+      "Barein"
+    ],
+    "center": {
+      "x": 1266,
+      "y": 337
+    }
   },
   {
     "class": "Bahamas",
@@ -2773,7 +3545,11 @@
     ],
     "names": [
       "Bahamas"
-    ]
+    ],
+    "center": {
+      "x": 555,
+      "y": 343
+    }
   },
   {
     "class": "Barbados",
@@ -2785,7 +3561,11 @@
     ],
     "names": [
       "Barbados"
-    ]
+    ],
+    "center": {
+      "x": 652,
+      "y": 415
+    }
   },
   {
     "class": "Comoros",
@@ -2804,8 +3584,14 @@
       }
     ],
     "names": [
-      "Comoros", "Comoras", "Islas Comoras"
-    ]
+      "Comoros",
+      "Comoras",
+      "Islas Comoras"
+    ],
+    "center": {
+      "x": 1230,
+      "y": 576
+    }
   },
   {
     "class": "Cape Verde",
@@ -2848,8 +3634,13 @@
       }
     ],
     "names": [
-      "Cape Verde", "Cabo Verde"
-    ]
+      "Cape Verde",
+      "Cabo Verde"
+    ],
+    "center": {
+      "x": 853,
+      "y": 405
+    }
   },
   {
     "class": "Cyprus",
@@ -2864,8 +3655,13 @@
       }
     ],
     "names": [
-      "Cyprus", "Chipre"
-    ]
+      "Cyprus",
+      "Chipre"
+    ],
+    "center": {
+      "x": 1162,
+      "y": 277
+    }
   },
   {
     "class": "Dominica",
@@ -2877,7 +3673,11 @@
     ],
     "names": [
       "Dominica"
-    ]
+    ],
+    "center": {
+      "x": 642,
+      "y": 402
+    }
   },
   {
     "class": "Micronesia",
@@ -2897,7 +3697,11 @@
     ],
     "names": [
       "Micronesia"
-    ]
+    ],
+    "center": {
+      "x": 1881,
+      "y": 457
+    }
   },
   {
     "class": "Grenada",
@@ -2908,8 +3712,13 @@
       }
     ],
     "names": [
-      "Grenada", "Granada"
-    ]
+      "Grenada",
+      "Granada"
+    ],
+    "center": {
+      "x": 640,
+      "y": 423
+    }
   },
   {
     "class": "Saint Kitts and Nevis",
@@ -2924,8 +3733,14 @@
       }
     ],
     "names": [
-      "Saint Kitts and Nevis", "San Cristobal", "San Cristobal y Nieves"
-    ]
+      "Saint Kitts and Nevis",
+      "San Cristobal",
+      "San Cristobal y Nieves"
+    ],
+    "center": {
+      "x": 637,
+      "y": 392
+    }
   },
   {
     "class": "Saint Lucia",
@@ -2936,8 +3751,13 @@
       }
     ],
     "names": [
-      "Saint Lucia", "Santa Lucia"
-    ]
+      "Saint Lucia",
+      "Santa Lucia"
+    ],
+    "center": {
+      "x": 642,
+      "y": 412
+    }
   },
   {
     "class": "Maldives",
@@ -2948,8 +3768,13 @@
       }
     ],
     "names": [
-      "Maldives", "Maldivas"
-    ]
+      "Maldives",
+      "Maldivas"
+    ],
+    "center": {
+      "x": 1402,
+      "y": 476
+    }
   },
   {
     "class": "Marshall Islands",
@@ -2960,8 +3785,13 @@
       }
     ],
     "names": [
-      "Marshall Islands", "Islas Marshall"
-    ]
+      "Marshall Islands",
+      "Islas Marshall"
+    ],
+    "center": {
+      "x": 1920,
+      "y": 457
+    }
   },
   {
     "class": "Malta",
@@ -2977,7 +3807,11 @@
     ],
     "names": [
       "Malta"
-    ]
+    ],
+    "center": {
+      "x": 1063,
+      "y": 271
+    }
   },
   {
     "class": "Mauritius",
@@ -2992,8 +3826,13 @@
       }
     ],
     "names": [
-      "Mauritius", "Mauricio"
-    ]
+      "Mauritius",
+      "Mauricio"
+    ],
+    "center": {
+      "x": 1306,
+      "y": 632
+    }
   },
   {
     "class": "Nauru",
@@ -3005,7 +3844,11 @@
     ],
     "names": [
       "Nauru"
-    ]
+    ],
+    "center": {
+      "x": 1910,
+      "y": 480
+    }
   },
   {
     "class": "Palau",
@@ -3017,7 +3860,11 @@
     ],
     "names": [
       "Palau"
-    ]
+    ],
+    "center": {
+      "x": 1800,
+      "y": 415
+    }
   },
   {
     "class": "Solomon Islands",
@@ -3156,8 +4003,13 @@
       }
     ],
     "names": [
-      "Solomon Islands", "Islas Salomon"
-    ]
+      "Solomon Islands",
+      "Islas Salomon"
+    ],
+    "center": {
+      "x": 1890.6165883763056,
+      "y": 563.6007620854798
+    }
   },
   {
     "class": "Sao Tome and Principe",
@@ -3172,8 +4024,14 @@
       }
     ],
     "names": [
-      "Sao Tome and Principe", "Santo Tome", "Santo Tome y Principe"
-    ]
+      "Sao Tome and Principe",
+      "Santo Tome",
+      "Santo Tome y Principe"
+    ],
+    "center": {
+      "x": 1023,
+      "y": 500
+    }
   },
   {
     "class": "Seychelles",
@@ -3193,7 +4051,11 @@
     ],
     "names": [
       "Seychelles"
-    ]
+    ],
+    "center": {
+      "x": 1248,
+      "y": 562
+    }
   },
   {
     "class": "Tonga",
@@ -3221,7 +4083,11 @@
     ],
     "names": [
       "Tonga"
-    ]
+    ],
+    "center": {
+      "x": 12,
+      "y": 637
+    }
   },
   {
     "class": "Trinidad and Tobago",
@@ -3236,8 +4102,14 @@
       }
     ],
     "names": [
-      "Trinidad and Tobago", "Trinidad y Tobago", "Trinidad"
-    ]
+      "Trinidad and Tobago",
+      "Trinidad y Tobago",
+      "Trinidad"
+    ],
+    "center": {
+      "x": 640,
+      "y": 434
+    }
   },
   {
     "class": "Tuvalu",
@@ -3249,7 +4121,11 @@
     ],
     "names": [
       "Tuvalu"
-    ]
+    ],
+    "center": {
+      "x": 1990,
+      "y": 575
+    }
   },
   {
     "class": "Saint Vincent and the Grenadines",
@@ -3260,8 +4136,17 @@
       }
     ],
     "names": [
-      "Saint Vincent and the Grenadines", "Saint Vincent", "Grenadines", "San Vicente y las Granadinas", "San Vicente", "Granadinas"
-    ]
+      "Saint Vincent and the Grenadines",
+      "Saint Vincent",
+      "Grenadines",
+      "San Vicente y las Granadinas",
+      "San Vicente",
+      "Granadinas"
+    ],
+    "center": {
+      "x": 642,
+      "y": 414
+    }
   },
   {
     "class": "Vanuatu",
@@ -3341,7 +4226,11 @@
     ],
     "names": [
       "Vanuatu"
-    ]
+    ],
+    "center": {
+      "x": 1922.667580674052,
+      "y": 599.6105107617694
+    }
   },
   {
     "class": "Samoa",
@@ -3357,7 +4246,11 @@
     ],
     "names": [
       "Samoa"
-    ]
+    ],
+    "center": {
+      "x": 16,
+      "y": 589
+    }
   },
   {
     "class": "Fiji",
@@ -3404,8 +4297,13 @@
       }
     ],
     "names": [
-      "Fiji", "Fiyi"
-    ]
+      "Fiji",
+      "Fiyi"
+    ],
+    "center": {
+      "x": 1981,
+      "y": 616
+    }
   },
   {
     "class": "Andorra",
@@ -3417,7 +4315,11 @@
     ],
     "names": [
       "Andorra"
-    ]
+    ],
+    "center": {
+      "x": 995,
+      "y": 228
+    }
   },
   {
     "class": "Monaco",
@@ -3429,7 +4331,11 @@
     ],
     "names": [
       "Monaco"
-    ]
+    ],
+    "center": {
+      "x": 1022,
+      "y": 223
+    }
   },
   {
     "class": "San Marino",
@@ -3441,7 +4347,11 @@
     ],
     "names": [
       "San Marino"
-    ]
+    ],
+    "center": {
+      "x": 1053,
+      "y": 223
+    }
   },
   {
     "class": "Vatican City",
@@ -3452,8 +4362,15 @@
       }
     ],
     "names": [
-      "Vatican City", "Vatican","Vaticano", "Ciudad del Vaticano"
-    ]
+      "Vatican City",
+      "Vatican",
+      "Vaticano",
+      "Ciudad del Vaticano"
+    ],
+    "center": {
+      "x": 1055,
+      "y": 234
+    }
   },
   {
     "class": "Liechtenstein",
@@ -3465,7 +4382,11 @@
     ],
     "names": [
       "Liechtenstein"
-    ]
+    ],
+    "center": {
+      "x": 1035,
+      "y": 200
+    }
   },
   {
     "class": "Kiribati",
@@ -3477,7 +4398,11 @@
     ],
     "names": [
       "Kiribati"
-    ]
+    ],
+    "center": {
+      "x": 108,
+      "y": 485
+    }
   },
   {
     "class": "Singapore",
@@ -3488,7 +4413,12 @@
       }
     ],
     "names": [
-      "Singapore","Singapur"
-    ]
+      "Singapore",
+      "Singapur"
+    ],
+    "center": {
+      "x": 1575,
+      "y": 492
+    }
   }
 ]

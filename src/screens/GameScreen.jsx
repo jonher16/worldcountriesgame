@@ -6,12 +6,15 @@ import countryData from '../assets/updated_grouped_country_paths.json';
 import validateCountry from '../utils/validateCountry';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function GameScreen() {
   const [input, setInput] = useState('');
   const [matchedCountries, setMatchedCountries] = useState([]);
   const [timeLeft, setTimeLeft] = useState(720);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showCountryList, setShowCountryList] = useState(false);
+  const [showMissingMarkers, setShowMissingMarkers] = useState(false); // Toggle for missing country markers
+
   const totalCountries = countryData.length;
   const navigate = useNavigate();
 
@@ -38,8 +41,32 @@ export default function GameScreen() {
     setShowConfirmation(false);
   };
 
+  const renderMissingMarkers = () => {
+    const missingCountries = countryData.filter(
+      (country) => !matchedCountries.includes(country.class)
+    );
+  
+    return (
+      <>
+        {missingCountries.map((country) => (
+          <circle
+            key={country.class}
+            cx={country.center.x}
+            cy={country.center.y}
+            r={5} // Radius of the red dot
+            fill="red"
+          />
+        ))}
+      </>
+    );
+  };
+
   const toggleCountryList = () => {
     setShowCountryList(!showCountryList);
+  };
+
+  const toggleMissingMarkers = () => {
+    setShowMissingMarkers(!showMissingMarkers);
   };
 
   useEffect(() => {
@@ -92,8 +119,19 @@ export default function GameScreen() {
       >
         Toggle Country List
       </button>
+      <button  
+      style={styles.showMissingButton} 
+      onClick={toggleMissingMarkers}
+      onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+      onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+      >
+      {showMissingMarkers ? 'Hide Missing Countries' : 'Show Missing Countries'}
+      </button>
+
       <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
-      <CountryMap matchedCountries={matchedCountries} />
+      <CountryMap matchedCountries={matchedCountries}>
+      {showMissingMarkers && renderMissingMarkers()}
+      </CountryMap>
       <Progress total={totalCountries} matched={matchedCountries.length} />
       <input
         style={styles.input}
@@ -139,9 +177,23 @@ const styles = {
     transition: 'border-color 0.3s, background-color 0.3s', // Smooth transition
     outline: 'none', // Remove focus outline
   },
+  showMissingButton: {
+    position: 'fixed',
+    top: '70px',
+    right: '20px',
+    padding: '10px 20px',
+    backgroundColor: '#333',
+    color: '#fff',
+    border: '2px solid transparent',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '16px',
+    transition: 'border-color 0.3s, background-color 0.3s', // Smooth transition
+    zIndex: '9999'
+  },
   toggleListButton: {
     position: 'fixed',
-    top: '70px', // Positioned below the "End Game" button
+    top: '120px', // Positioned below the "End Game" button
     right: '20px',
     padding: '10px 20px',
     backgroundColor: '#333',
@@ -151,7 +203,7 @@ const styles = {
     cursor: 'pointer',
     fontSize: '16px',
     transition: 'border-color 0.3s, background-color 0.3s', // Smooth transition
-    outline: 'none', // Remove focus outline
+    zIndex: '9999'
   },
   // Styling for both buttons on hover
   buttonHover: {
