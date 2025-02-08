@@ -10,7 +10,8 @@
     "names": [
       "Afghanistan",
       "Afganistan",
-      "Republica Islamica de Afganistan"
+      "Republica Islamica de Afganistan",
+      "아프가니스탄"
     ],
     "center": {
       "x": 1340,
@@ -30,7 +31,8 @@
       }
     ],
     "names": [
-      "Angola"
+      "Angola",
+      "앙골라"
     ],
     "center": {
       "x": 1084,
@@ -46,7 +48,8 @@
       }
     ],
     "names": [
-      "Albania"
+      "Albania",
+      "알바니아"
     ],
     "center": {
       "x": 1090,
@@ -65,7 +68,9 @@
       "United Arab Emirates",
       "UAE",
       "Emiratos",
-      "Emiratos Arabes Unidos"
+      "Emiratos Arabes Unidos",
+      "아랍에미리트",
+      "에미리트"
     ],
     "center": {
       "x": 1285,
@@ -85,7 +90,8 @@
       }
     ],
     "names": [
-      "Argentina"
+      "Argentina",
+      "아르헨티나"
     ],
     "center": {
       "x": 640.4744279204249,
@@ -101,7 +107,8 @@
       }
     ],
     "names": [
-      "Armenia"
+      "Armenia",
+      "아르메니아"
     ],
     "center": {
       "x": 1220,
@@ -121,7 +128,9 @@
       }
     ],
     "names": [
-      "Australia"
+      "Australia",
+      "오스트레일리아"
+
     ],
     "center": {
       "x": 1724.665882254009,
@@ -137,7 +146,9 @@
       }
     ],
     "names": [
-      "Austria"
+      "Austria",
+      "오스트리아"
+
     ],
     "center": {
       "x": 1058,
@@ -158,7 +169,9 @@
     ],
     "names": [
       "Azerbaijan",
-      "Azerbaiyan"
+      "Azerbaiyan",
+      "아제르바이잔"
+
     ],
     "center": {
       "x": 1235,
@@ -174,7 +187,8 @@
       }
     ],
     "names": [
-      "Burundi"
+      "Burundi",
+      "부룬디"
     ],
     "center": {
       "x": 1156,
@@ -191,7 +205,8 @@
     ],
     "names": [
       "Belgium",
-      "Belgica"
+      "Belgica",
+      "벨기"
     ],
     "center": {
       "x": 1010,
@@ -207,7 +222,8 @@
       }
     ],
     "names": [
-      "Benin"
+      "Benin",
+      "베냉"
     ],
     "center": {
       "x": 999,
@@ -223,7 +239,10 @@
       }
     ],
     "names": [
-      "Burkina Faso"
+      "Burkina Faso",
+      "Burkina",
+      "부르키나파소",
+      "부르키나"
     ],
     "center": {
       "x": 975,
@@ -240,7 +259,8 @@
     ],
     "names": [
       "Bangladesh",
-      "Banglades"
+      "Banglades",
+      "방글라데시"
     ],
     "center": {
       "x": 1484,
@@ -256,7 +276,8 @@
       }
     ],
     "names": [
-      "Bulgaria"
+      "Bulgaria",
+      "불가리아"
     ],
     "center": {
       "x": 1115,
@@ -274,7 +295,9 @@
     "names": [
       "Bosnia and Herzegovina",
       "Bosnia y Herzegovina",
-      "Bosnia"
+      "Bosnia",
+      "보스니아 헤르체고비나",
+      "보스니아"
     ],
     "center": {
       "x": 1079,
@@ -291,7 +314,8 @@
     ],
     "names": [
       "Belarus",
-      "Bielorrusia"
+      "Bielorrusia",
+      "벨라루스"
     ],
     "center": {
       "x": 1120,
@@ -308,7 +332,8 @@
     ],
     "names": [
       "Belize",
-      "Belice"
+      "Belice",
+      "벨리즈"
     ],
     "center": {
       "x": 491,
@@ -324,7 +349,8 @@
       }
     ],
     "names": [
-      "Bolivia"
+      "Bolivia",
+      "볼리비아"
     ],
     "center": {
       "x": 620,
@@ -341,7 +367,8 @@
     ],
     "names": [
       "Brazil",
-      "Brasil"
+      "Brasil",
+      "브라질"
     ],
     "center": {
       "x": 700,
@@ -357,7 +384,8 @@
       }
     ],
     "names": [
-      "Brunei"
+      "Brunei",
+      "브루나이"
     ],
     "center": {
       "x": 1637,
@@ -374,7 +402,9 @@
     ],
     "names": [
       "Bhutan",
-      "Butan"
+      "Butan",
+      "부탄"
+      
     ],
     "center": {
       "x": 1482,
@@ -391,7 +421,8 @@
     ],
     "names": [
       "Botswana",
-      "Botsuana"
+      "Botsuana",
+      "보츠와나"
     ],
     "center": {
       "x": 1120,
@@ -409,7 +440,10 @@
     "names": [
       "Central African Republic",
       "Republica Centroafricana",
-      "Centroafricana"
+      "Centroafricana",
+      "Centroafrica",
+      "중앙아프리카공화국",
+      "중앙아프리카"
     ],
     "center": {
       "x": 1100,
@@ -541,7 +575,8 @@
       }
     ],
     "names": [
-      "Canada"
+      "Canada",
+      "캐나다"
     ],
     "center": {
       "x": 522,
@@ -558,7 +593,8 @@
     ],
     "names": [
       "Switzerland",
-      "Suiza"
+      "Suiza",
+      "스위스"
     ],
     "center": {
       "x": 1025,
@@ -578,7 +614,10 @@
       }
     ],
     "names": [
-      "China"
+      "China",
+      "Zhongqu",
+      "중국",
+      "中国"
     ],
     "center": {
       "x": 1534.903423087004,
@@ -595,7 +634,8 @@
     ],
     "names": [
       "Ivory Coast",
-      "Costa de Marfil"
+      "Costa de Marfil",
+      "코트디부아르"
     ],
     "center": {
       "x": 955,
@@ -612,7 +652,8 @@
     ],
     "names": [
       "Cameroon",
-      "Camerun"
+      "Camerun",
+      "카메룬"
     ],
     "center": {
       "x": 1050,
@@ -630,7 +671,9 @@
     "names": [
       "Democratic Republic of the Congo",
       "Congo",
-      "Republica Democratica del Congo"
+      "Republica Democratica del Congo",
+      "콩고민주공화국",
+      "콩고"
     ],
     "center": {
       "x": 1120,
@@ -648,7 +691,9 @@
     "names": [
       "Republic of Congo",
       "Congo",
-      "Republica del Congo"
+      "Republica del Congo",
+      "콩고",
+      "콩고공화국"
     ],
     "center": {
       "x": 1070,
@@ -664,7 +709,8 @@
       }
     ],
     "names": [
-      "Colombia"
+      "Colombia",
+      "콜롬비아"
     ],
     "center": {
       "x": 570,
@@ -680,7 +726,8 @@
       }
     ],
     "names": [
-      "Costa Rica"
+      "Costa Rica",
+      "코스타리카"
     ],
     "center": {
       "x": 510,
@@ -696,7 +743,8 @@
       }
     ],
     "names": [
-      "Cuba"
+      "Cuba",
+      "쿠바"
     ],
     "center": {
       "x": 555,
@@ -713,8 +761,10 @@
     ],
     "names": [
       "Czech Republic",
+      "Czechia",
       "Chequia",
-      "Republica Checa"
+      "Republica Checa",
+      "체코"
     ],
     "center": {
       "x": 1058,
@@ -731,7 +781,8 @@
     ],
     "names": [
       "Germany",
-      "Alemania"
+      "Alemania",
+      "독일"
     ],
     "center": {
       "x": 1035,
@@ -748,7 +799,9 @@
     ],
     "names": [
       "Djibouti",
-      "Yibuti"
+      "Yibuti",
+      "지부티"
+
     ],
     "center": {
       "x": 1226,
@@ -801,7 +854,8 @@
     ],
     "names": [
       "Denmark",
-      "Dinamarca"
+      "Dinamarca",
+      "덴마크"
     ],
     "center": {
       "x": 1029,
@@ -819,7 +873,8 @@
     "names": [
       "Dominican Republic",
       "Dominicana",
-      "Republica Dominicana"
+      "Republica Dominicana",
+      "도미니카공화국"
     ],
     "center": {
       "x": 595,
@@ -836,7 +891,8 @@
     ],
     "names": [
       "Algeria",
-      "Argelia"
+      "Argelia",
+      "알제리"
     ],
     "center": {
       "x": 1000,
@@ -852,7 +908,8 @@
       }
     ],
     "names": [
-      "Ecuador"
+      "Ecuador",
+      "에콰도르"
     ],
     "center": {
       "x": 540,
@@ -869,7 +926,9 @@
     ],
     "names": [
       "Egypt",
-      "Egipto"
+      "Egipto",
+      "Misr",
+      "이집트"
     ],
     "center": { 
       "x": 1150,
@@ -885,7 +944,8 @@
       }
     ],
     "names": [
-      "Eritrea"
+      "Eritrea",
+      "에리트레아"
     ],
     "center": {
       "x": 1200,
@@ -901,7 +961,8 @@
       }
     ],
     "names": [
-      "Estonia"
+      "Estonia",
+      "에스토니아"
     ],
     "center": {
       "x": 1105,
@@ -918,7 +979,8 @@
     ],
     "names": [
       "Ethiopia",
-      "Etiopia"
+      "Etiopia",
+      "에티오피아"
     ],
     "center": {
       "x": 1200,
@@ -935,7 +997,8 @@
     ],
     "names": [
       "Finland",
-      "Finlandia"
+      "Finlandia",
+      "핀란드"
     ],
     "center": {
       "x": 1100,
@@ -951,7 +1014,8 @@
       }
     ],
     "names": [
-      "Gabon"
+      "Gabon",
+      "가봉"
     ],
     "center": {
       "x": 1050,
@@ -1057,7 +1121,8 @@
     "names": [
       "United Kingdom",
       "UK",
-      "Great Britain"
+      "Great Britain",
+      "영국"
     ],
     "center": {
       "x": 973.8578578705519,
@@ -1073,7 +1138,8 @@
       }
     ],
     "names": [
-      "Georgia"
+      "Georgia",
+      "조지아"
     ],
     "center": {
       "x": 1210,
@@ -1089,7 +1155,8 @@
       }
     ],
     "names": [
-      "Ghana"
+      "Ghana",
+      "가나"
     ],
     "center": {
       "x": 980,
@@ -1105,7 +1172,8 @@
       }
     ],
     "names": [
-      "Guinea"
+      "Guinea",
+      "기니"
     ],
     "center": {
       "x": 920,
@@ -1122,7 +1190,8 @@
     ],
     "names": [
       "The Gambia",
-      "Gambia"
+      "Gambia",
+      "감비아"
     ],
     "center": {
       "x": 900,
@@ -1139,7 +1208,8 @@
     ],
     "names": [
       "Guinea-Bissau",
-      "Guinea Bissau"
+      "Guinea Bissau",
+      "기니비사우"
     ],
     "center": {
       "x": 900,
@@ -1156,7 +1226,8 @@
     ],
     "names": [
       "Equatorial Guinea",
-      "Guinea Ecuatorial"
+      "Guinea Ecuatorial",
+      "적도기니"
     ],
     "center": {
       "x": 1045,
@@ -1177,7 +1248,9 @@
     ],
     "names": [
       "Greece",
-      "Grecia"
+      "Grecia",
+      "Hellas",
+      "그리스"
     ],
     "center": {
       "x": 1100,
@@ -1193,7 +1266,8 @@
       }
     ],
     "names": [
-      "Guatemala"
+      "Guatemala",
+      "과테말라"
     ],
     "center": {
       "x": 477,
@@ -1209,7 +1283,9 @@
       }
     ],
     "names": [
-      "Guyana"
+      "Guyana",
+      "Guyane",
+      "가이아나"
     ],
     "center": {
       "x": 652,
@@ -1225,7 +1301,8 @@
       }
     ],
     "names": [
-      "Honduras"
+      "Honduras",
+      "온두라스"
     ],
     "center": {
       "x": 500,
@@ -1242,7 +1319,8 @@
     ],
     "names": [
       "Croatia",
-      "Croacia"
+      "Croacia",
+      "크로아티아"
     ],
     "center": {
       "x": 1070,
@@ -1258,7 +1336,8 @@
       }
     ],
     "names": [
-      "Haiti"
+      "Haiti",
+      "아이티"
     ],
     "center": {
       "x": 584,
@@ -1275,7 +1354,8 @@
     ],
     "names": [
       "Hungary",
-      "Hungria"
+      "Hungria",
+      "헝가리"
     ],
     "center": {
       "x": 1080,
@@ -1339,7 +1419,8 @@
       }
     ],
     "names": [
-      "Indonesia"
+      "Indonesia",
+      "인도네시아"
     ],
     "center": {
       "x": 1615,
@@ -1356,7 +1437,8 @@
     ],
     "names": [
       "India",
-      "Bharat"
+      "Bharat",
+      "인도"
     ],
     "center": {
       "x": 1420,
@@ -1373,7 +1455,9 @@
     ],
     "names": [
       "Ireland",
-      "Irlanda"
+      "Irlanda",
+      "Eire",
+      "아일랜드"
     ],
     "center": {
       "x": 948,
@@ -1389,7 +1473,8 @@
       }
     ],
     "names": [
-      "Iran"
+      "Iran",
+      "이란"
     ],
     "center": {
       "x": 1280,
@@ -1405,7 +1490,9 @@
       }
     ],
     "names": [
-      "Iraq"
+      "Iraq",
+      "Irak",
+      "이라크"
     ],
     "center": {
       "x": 1220,
@@ -1438,7 +1525,10 @@
       }
     ],
     "names": [
-      "Israel"
+      "Israel",
+      "Israil",
+      "Yisrael",
+      "아이슬란드"
     ],
     "center": {
       "x": 1175,
@@ -1463,7 +1553,9 @@
     ],
     "names": [
       "Italy",
-      "Italia"
+      "Italia",
+      "이탈리아",
+      "이태리"
     ],
     "center": {
       "x": 1045,
@@ -1479,7 +1571,8 @@
       }
     ],
     "names": [
-      "Jamaica"
+      "Jamaica",
+      "자메이카"
     ],
     "center": {
       "x": 555,
@@ -1495,7 +1588,9 @@
       }
     ],
     "names": [
-      "Jordan"
+      "Jordan",
+      "Jordania",
+      "요르단"
     ],
     "center": {
       "x": 1184,
@@ -1520,7 +1615,12 @@
     ],
     "names": [
       "Japan",
-      "Japon"
+      "Japon",
+      "Nihon",
+      "Nippon",
+      "日本",
+      "日本国",
+      "일본"
     ],
     "center": {
       "x": 1720,
@@ -1554,7 +1654,8 @@
     ],
     "names": [
       "Kenya",
-      "Kenia"
+      "Kenia",
+      "카자흐스탄"
     ],
     "center": {
       "x": 1200,
@@ -1571,7 +1672,8 @@
     ],
     "names": [
       "Kyrgyzstan",
-      "Kirguistan"
+      "Kirguistan",
+      "키르기스스탄"
     ],
     "center": {
       "x": 1380,
@@ -1588,7 +1690,8 @@
     ],
     "names": [
       "Cambodia",
-      "Camboya"
+      "Camboya",
+      "캄보디아"
     ],
     "center": {
       "x": 1575,
@@ -1606,7 +1709,10 @@
     "names": [
       "South Korea",
       "Corea del Sur",
-      "Republica de Corea"
+      "Republica de Corea",
+      "Surcorea",
+      "한국",
+      "대한민국"
     ],
     "center": {
       "x": 1665,
@@ -1622,7 +1728,8 @@
       }
     ],
     "names": [
-      "Kuwait"
+      "Kuwait",
+      "쿠웨이트"
     ],
     "center": {
       "x": 1246,
@@ -1639,7 +1746,9 @@
     ],
     "names": [
       "Lao",
-      "Laos"
+      "Laos",
+      "Lang Xang",
+      "라오스"
     ],
     "center": {
       "x": 1557,
@@ -1656,7 +1765,8 @@
     ],
     "names": [
       "Lebanon",
-      "Libano"
+      "Libano",
+      "레바논"
     ],
     "center": {
       "x": 1178,
@@ -1672,7 +1782,8 @@
       }
     ],
     "names": [
-      "Liberia"
+      "Liberia",
+      "라이베리아"
     ],
     "center": {
       "x": 933,
@@ -1689,7 +1800,8 @@
     ],
     "names": [
       "Libya",
-      "Libia"
+      "Libia",
+      "리비아"
     ],
     "center": {
       "x": 1090,
@@ -1705,7 +1817,8 @@
       }
     ],
     "names": [
-      "Sri Lanka"
+      "Sri Lanka",
+      "스리랑카"
     ],
     "center": {
       "x": 1443,
@@ -1722,7 +1835,8 @@
     ],
     "names": [
       "Lesotho",
-      "Lesoto"
+      "Lesoto",
+      "레소토"
     ],
     "center": {
       "x": 1140,
@@ -1739,7 +1853,8 @@
     ],
     "names": [
       "Lithuania",
-      "Lituania"
+      "Lituania",
+      "리투아니아"
     ],
     "center": {
       "x": 1100,
@@ -1756,7 +1871,8 @@
     ],
     "names": [
       "Luxembourg",
-      "Luxemburgo"
+      "Luxemburgo",
+      "룩셈부르크"
     ],
     "center": {
       "x": 1015,
@@ -1773,7 +1889,8 @@
     ],
     "names": [
       "Latvia",
-      "Letonia"
+      "Letonia",
+      "라트비아"
     ],
     "center": {
       "x": 1105,
@@ -1790,7 +1907,8 @@
     ],
     "names": [
       "Morocco",
-      "Marruecos"
+      "Marruecos",
+      "모로코"
     ],
     "center": {
       "x": 943,
@@ -1807,7 +1925,8 @@
     ],
     "names": [
       "Moldova",
-      "Moldavia"
+      "Moldavia",
+      "몰도바"
     ],
     "center": {
       "x": 1130,
@@ -1823,7 +1942,8 @@
       }
     ],
     "names": [
-      "Madagascar"
+      "Madagascar",
+      "마다가스카르"
     ],
     "center": {
       "x": 1245,
@@ -1839,7 +1959,12 @@
       }
     ],
     "names": [
-      "Mexico"
+      "Mexico",
+      "Estados Unidos Mexicanos",
+      "EUM",
+      "United Mexican States",
+      "UMS",
+      "멕시코"
     ],
     "center": {
       "x": 420,
@@ -1855,7 +1980,11 @@
       }
     ],
     "names": [
-      "Macedonia"
+      "Macedonia",
+      "북마케도니아",
+      "마케도니아",
+      "Macedonia del Norte",
+      "North Macedonia"
     ],
     "center": {
       "x": 1100,
@@ -1871,7 +2000,8 @@
       }
     ],
     "names": [
-      "Mali"
+      "Mali",
+      "말리"
     ],
     "center": {
       "x": 975,
@@ -1889,7 +2019,8 @@
     "names": [
       "Myanmar",
       "Burma",
-      "Birmania"
+      "Birmania",
+      "미얀마"
     ],
     "center": {
       "x": 1520,
@@ -1905,11 +2036,12 @@
       }
     ],
     "names": [
-      "Montenegro"
+      "Montenegro",
+      "몬테네그로"
     ],
     "center": {
       "x": 1086,
-      "y": 228
+      "y": 227.2
     }
   },
   {
@@ -1921,7 +2053,8 @@
       }
     ],
     "names": [
-      "Mongolia"
+      "Mongolia",
+      "몽골"
     ],
     "center": {
       "x": 1500,
@@ -1937,7 +2070,8 @@
       }
     ],
     "names": [
-      "Mozambique"
+      "Mozambique",
+      "모잠비크"
     ],
     "center": {
       "x": 1170,
@@ -1953,7 +2087,8 @@
       }
     ],
     "names": [
-      "Mauritania"
+      "Mauritania",
+      "모리타니"
     ],
     "center": {
       "x": 925,
@@ -1969,7 +2104,8 @@
       }
     ],
     "names": [
-      "Malawi"
+      "Malawi",
+      "말라위"
     ],
     "center": {
       "x": 1176,
@@ -1990,7 +2126,8 @@
     ],
     "names": [
       "Malaysia",
-      "Malasia"
+      "Malasia",
+      "말레이시아"
     ],
     "center": {
       "x": 1565,
@@ -2006,7 +2143,8 @@
       }
     ],
     "names": [
-      "Namibia"
+      "Namibia",
+      "나미비아"
     ],
     "center": {
       "x": 1080,
@@ -2022,7 +2160,8 @@
       }
     ],
     "names": [
-      "Niger"
+      "Niger",
+      "니제르"
     ],
     "center": {
       "x": 1030,
@@ -2038,7 +2177,8 @@
       }
     ],
     "names": [
-      "Nigeria"
+      "Nigeria",
+      "나이지리아"
     ],
     "center": {
       "x": 1030,
@@ -2054,7 +2194,8 @@
       }
     ],
     "names": [
-      "Nicaragua"
+      "Nicaragua",
+      "니카라과"
     ],
     "center": {
       "x": 508,
@@ -2083,7 +2224,8 @@
     ],
     "names": [
       "Norway",
-      "Noruega"
+      "Noruega",
+      "노르웨이"
     ],
     "center": {
       "x": 1020,
@@ -2099,7 +2241,8 @@
       }
     ],
     "names": [
-      "Nepal"
+      "Nepal",
+      "네팔"
     ],
     "center": {
       "x": 1445,
@@ -2119,7 +2262,8 @@
       }
     ],
     "names": [
-      "Oman"
+      "Oman",
+      "오만"
     ],
     "center": {
       "x": 1298.380766855121,
@@ -2135,7 +2279,8 @@
       }
     ],
     "names": [
-      "Pakistan"
+      "Pakistan",
+      "파키스탄"
     ],
     "center": {
       "x": 1368,
@@ -2151,7 +2296,8 @@
       }
     ],
     "names": [
-      "Panama"
+      "Panama",
+      "파나마"
     ],
     "center": {
       "x": 528,
@@ -2167,7 +2313,8 @@
       }
     ],
     "names": [
-      "Peru"
+      "Peru",
+      "페루"
     ],
     "center": {
       "x": 560,
@@ -2208,7 +2355,10 @@
     ],
     "names": [
       "Philippines",
-      "Filipinas"
+      "Pilipinas",
+      "The Philippines",
+      "Filipinas",
+      "필리핀"
     ],
     "center": {
       "x": 1667.813049570124,
@@ -2237,7 +2387,8 @@
     ],
     "names": [
       "Papua New Guinea",
-      "Papua Nueva Guinea"
+      "Papua Nueva Guinea",
+      "파푸아뉴기니"
     ],
     "center": {
       "x": 1800,
@@ -2254,7 +2405,8 @@
     ],
     "names": [
       "Poland",
-      "Polonia"
+      "Polonia",
+      "폴란드"
     ],
    "center": {
       "x": 1080,
@@ -2273,7 +2425,10 @@
       "North Korea",
       "Corea del Norte",
       "Republica Popular Democratica de Corea",
-      "DPRK"
+      "DPRK",
+      "RPDC",
+      "북한",
+      "조선민주주의인민공화국"
     ],
     "center": {
       "x": 1649,
@@ -2289,7 +2444,8 @@
       }
     ],
     "names": [
-      "Paraguay"
+      "Paraguay",
+      "파라과이"
     ],
     "center": {
       "x": 652,
@@ -2306,7 +2462,8 @@
     ],
     "names": [
       "Palestine",
-      "Palestina"
+      "Palestina",
+      "팔레스타인"
     ],
     "center": {
       "x": 1177,
@@ -2322,7 +2479,8 @@
       }
     ],
     "names": [
-      "Qatar"
+      "Qatar",
+      "카타르"
     ],
     "center": {
       "x": 1269,
@@ -2339,7 +2497,8 @@
     ],
     "names": [
       "Romania",
-      "Rumania"
+      "Rumania",
+      "루마니아"
     ],
     "center": {
       "x": 1110,
@@ -2356,7 +2515,8 @@
     ],
     "names": [
       "Rwanda",
-      "Ruanda"
+      "Ruanda",
+      "르완다"
     ],
     "center": {
       "x": 1156,
@@ -2373,7 +2533,9 @@
     ],
     "names": [
       "Western Sahara",
-      "Sahara Occidental"
+      "Sahara Occidental",
+      "Sahara",
+      "서사하라"
     ],
     "center": {
       "x": 915,
@@ -2390,7 +2552,8 @@
     ],
     "names": [
       "Saudi Arabia",
-      "Arabia Saudi"
+      "Arabia Saudi",
+      "사우디아라비아"
     ],
     "center": {
       "x": 1230,
@@ -2406,7 +2569,8 @@
       }
     ],
     "names": [
-      "Sudan"
+      "Sudan",
+      "수단"
     ],
     "center": {
       "x": 1150,
@@ -2423,7 +2587,8 @@
     ],
     "names": [
       "South Sudan",
-      "Sudan del Sur"
+      "Sudan del Sur",
+      "남수단"
     ],
     "center": {
       "x": 1150,
@@ -2439,7 +2604,8 @@
       }
     ],
     "names": [
-      "Senegal"
+      "Senegal",
+      "세네갈"
     ],
     "center": {
       "x": 900,
@@ -2456,7 +2622,8 @@
     ],
     "names": [
       "Sierra Leone",
-      "Sierra Leona"
+      "Sierra Leona",
+      "시에라리온"
     ],
     "center": {
       "x": 919,
@@ -2472,7 +2639,8 @@
       }
     ],
     "names": [
-      "El Salvador"
+      "El Salvador",
+      "엘살바도르"
     ],
     "center": {
       "x": 487,
@@ -2488,7 +2656,8 @@
       }
     ],
     "names": [
-      "Serbia"
+      "Serbia",
+      "세르비아"
     ],
     "center": {
       "x": 1090,
@@ -2505,7 +2674,8 @@
     ],
     "names": [
       "Suriname",
-      "Surinam"
+      "Surinam",
+      "수리남"
     ],
     "center": {
       "x": 670,
@@ -2522,7 +2692,8 @@
     ],
     "names": [
       "Slovakia",
-      "Eslovaquia"
+      "Eslovaquia",
+      "슬로바키아"
     ],
     "center": {
       "x": 1080,
@@ -2539,7 +2710,8 @@
     ],
     "names": [
       "Slovenia",
-      "Eslovenia"
+      "Eslovenia",
+      "슬로베니아"
     ],
     "center": {
       "x": 1062,
@@ -2556,7 +2728,9 @@
     ],
     "names": [
       "Sweden",
-      "Suecia"
+      "Suecia",
+      "Sverige",
+      "스웨덴"
     ],
     "center": {
       "x": 1050,
@@ -2575,7 +2749,8 @@
       "Swaziland",
       "Eswatini",
       "Suazilandia",
-      "Esuatini"
+      "Esuatini",
+      "스와질란드"
     ],
     "center": {
       "x": 1160,
@@ -2592,7 +2767,8 @@
     ],
     "names": [
       "Syria",
-      "Siria"
+      "Siria",
+      "시리아"
     ],
     "center": {
       "x": 1195,
@@ -2608,7 +2784,8 @@
       }
     ],
     "names": [
-      "Chad"
+      "Chad",
+      "차드"
     ],
     "center": {
       "x": 1090,
@@ -2624,7 +2801,8 @@
       }
     ],
     "names": [
-      "Togo"
+      "Togo",
+      "토고"
     ],
     "center": {
       "x": 992,
@@ -2641,7 +2819,11 @@
     ],
     "names": [
       "Thailand",
-      "Tailandia"
+      "Tailandia",
+      "Siam",
+      "Thai",
+      "Kingdom of Thailand",
+      "태국"
     ],
     "center": {
       "x": 1557,
@@ -2657,7 +2839,8 @@
       }
     ],
     "names": [
-      "Tajikistan"
+      "Tajikistan",
+      "타지키스탄"
     ],
     "center": {
       "x": 1368,
@@ -2673,7 +2856,8 @@
       }
     ],
     "names": [
-      "Turkmenistan"
+      "Turkmenistan",
+      "투르크메니스탄"
     ],
     "center": {
       "x": 1300,
@@ -2691,7 +2875,8 @@
     "names": [
       "Timor-Leste",
       "Timor Oriental",
-      "Timor"
+      "Timor",
+      "동티모르"
     ],
     "center": {
       "x": 1700,
@@ -2708,7 +2893,8 @@
     ],
     "names": [
       "Tunisia",
-      "Tunez"
+      "Tunez",
+      "튀니지"
     ],
     "center": {
       "x": 1037,
@@ -2729,7 +2915,10 @@
     ],
     "names": [
       "Turkey",
-      "Turquia"
+      "Turquia",
+      "Turkiye",
+      "Türkiye",
+      "터키"
     ],
     "center": {
       "x": 1172.1465320137866,
@@ -2745,7 +2934,8 @@
       }
     ],
     "names": [
-      "Taiwan"
+      "Taiwan",
+      "대만"
     ],
     "center": {
       "x": 1655,
@@ -2761,7 +2951,8 @@
       }
     ],
     "names": [
-      "Tanzania"
+      "Tanzania",
+      "탄자니아"
     ],
     "center": {
       "x": 1170,
@@ -2777,7 +2968,8 @@
       }
     ],
     "names": [
-      "Uganda"
+      "Uganda",
+      "우간다"
     ],
     "center": {
       "x": 1170,
@@ -2794,7 +2986,8 @@
     ],
     "names": [
       "Ukraine",
-      "Ucrania"
+      "Ucrania",
+      "우크라이나"
     ],
     "center": {
       "x": 1120,
@@ -2810,7 +3003,8 @@
       }
     ],
     "names": [
-      "Uruguay"
+      "Uruguay",
+      "우루과이"
     ],
     "center": {
       "x": 685,
@@ -2826,7 +3020,8 @@
       }
     ],
     "names": [
-      "Uzbekistan"
+      "Uzbekistan",
+      "우즈베키스탄"
     ],
     "center": {
       "x": 1320,
@@ -2842,7 +3037,8 @@
       }
     ],
     "names": [
-      "Venezuela"
+      "Venezuela",
+      "베네수엘라"
     ],
     "center": {
       "x": 610,
@@ -2858,7 +3054,8 @@
       }
     ],
     "names": [
-      "Vietnam"
+      "Vietnam",
+      "베트남"
     ],
     "center": {
       "x": 1574,
@@ -2874,7 +3071,8 @@
       }
     ],
     "names": [
-      "Yemen"
+      "Yemen",
+       "예멘"
     ],
     "center": {
       "x": 1240,
@@ -2890,7 +3088,8 @@
       }
     ],
     "names": [
-      "Zambia"
+      "Zambia",
+      "잠비아"
     ],
     "center": {
       "x": 1130,
@@ -2907,7 +3106,8 @@
     ],
     "names": [
       "Zimbabwe",
-      "Zimbabue"
+      "Zimbabue",
+      "짐바브웨"
     ],
     "center": {
       "x": 1150,
@@ -2923,7 +3123,8 @@
       }
     ],
     "names": [
-      "Somalia"
+      "Somalia",
+      "소말리아"
     ],
     "center": {
       "x": 1260,
@@ -2939,7 +3140,9 @@
       }
     ],
     "names": [
-      "Kosovo"
+      "Kosovo",
+      "Republica de Kosovo",
+      "코소보"
     ],
     "center": {
       "x": 1095,
@@ -2956,7 +3159,8 @@
     ],
     "names": [
       "South Africa",
-      "Sudafrica"
+      "Sudafrica",
+      "남아프리카"
     ],
     "center": {
       "x": 1110,
@@ -2977,7 +3181,8 @@
     ],
     "names": [
       "New Zealand",
-      "Nueva Zelanda"
+      "Nueva Zelanda",
+      "뉴질랜드"
     ],
     "center": {
       "x": 1858.1537824567292,
@@ -2997,7 +3202,8 @@
       }
     ],
     "names": [
-      "Chile"
+      "Chile",
+      "칠레"
     ],
     "center": {
       "x": 604,
@@ -3039,7 +3245,8 @@
     "names": [
       "Netherlands",
       "Holanda",
-      "Paises Bajos"
+      "Paises Bajos",
+      "네덜란드"
     ],
     "center": {
       "x": 1012,
@@ -3055,7 +3262,8 @@
       }
     ],
     "names": [
-      "Portugal"
+      "Portugal",
+      "포르투갈"
     ],
     "center": {
       "x": 943,
@@ -3108,7 +3316,8 @@
     ],
     "names": [
       "Russia",
-      "Rusia"
+      "Rusia",
+      "러시아"
     ],
     "center": {
       "x": 1423.437325607527,
@@ -3155,7 +3364,16 @@
       "Spain",
       "Espana",
       "Espa\u00f1a",
-      "Reino de Espa\u00f1a"
+      "Reino de Espa\u00f1a",
+      "Espanistan",
+      "Espa\u00f1istan",
+      "Espanita",
+      "Espa\u00f1ita",
+      "Hispania",
+      "Euskadi del sur",
+      "Canarias del norte",
+      "스페인",
+      "서바나"
     ],
     "center": {
       "x": 965,
@@ -3304,7 +3522,10 @@
     ],
     "names": [
       "France",
-      "Francia"
+      "Francia",
+      "프랑스",
+      "Gabacholandia",
+      "Gabachilandia"
     ],
     "center": {
       "x": 998,
@@ -3421,7 +3642,8 @@
       "Estados Unidos",
       "Estados Unidos de America",
       "USA",
-      "EEUU"
+      "EEUU",
+      "미국"
     ],
     "center": {
       "x": 467,
@@ -3443,7 +3665,8 @@
     "names": [
       "Antigua and Barbuda",
       "Antigua",
-      "Antigua y Barbuda"
+      "Antigua y Barbuda",
+      "앤티가 바부다"
     ],
     "center": {
       "x": 640,
@@ -3460,7 +3683,8 @@
     ],
     "names": [
       "Bahrain",
-      "Barein"
+      "Barein",
+      "바레인"
     ],
     "center": {
       "x": 1266,
@@ -3544,7 +3768,8 @@
       }
     ],
     "names": [
-      "Bahamas"
+      "Bahamas",
+      "바하마"
     ],
     "center": {
       "x": 555,
@@ -3560,7 +3785,8 @@
       }
     ],
     "names": [
-      "Barbados"
+      "Barbados",
+      "바베이도스"
     ],
     "center": {
       "x": 652,
@@ -3586,7 +3812,8 @@
     "names": [
       "Comoros",
       "Comoras",
-      "Islas Comoras"
+      "Islas Comoras",
+      "코모로스"
     ],
     "center": {
       "x": 1230,
@@ -3635,7 +3862,8 @@
     ],
     "names": [
       "Cape Verde",
-      "Cabo Verde"
+      "Cabo Verde",
+      "카보베르데"
     ],
     "center": {
       "x": 853,
@@ -3656,7 +3884,8 @@
     ],
     "names": [
       "Cyprus",
-      "Chipre"
+      "Chipre",
+      "키프로스"
     ],
     "center": {
       "x": 1162,
@@ -3672,7 +3901,8 @@
       }
     ],
     "names": [
-      "Dominica"
+      "Dominica",
+      "도미니카"
     ],
     "center": {
       "x": 642,
@@ -3696,7 +3926,8 @@
       }
     ],
     "names": [
-      "Micronesia"
+      "Micronesia",
+      "미크로네시아"
     ],
     "center": {
       "x": 1881,
@@ -3713,7 +3944,8 @@
     ],
     "names": [
       "Grenada",
-      "Granada"
+      "Granada",
+      "그레나다"
     ],
     "center": {
       "x": 640,
@@ -3734,8 +3966,11 @@
     ],
     "names": [
       "Saint Kitts and Nevis",
+      "Saint Kitts",
       "San Cristobal",
-      "San Cristobal y Nieves"
+      "San Cristobal y Nieves",
+      "세인트키츠 네비스",
+      "세인트키츠"
     ],
     "center": {
       "x": 637,
@@ -3752,7 +3987,8 @@
     ],
     "names": [
       "Saint Lucia",
-      "Santa Lucia"
+      "Santa Lucia",
+      "세인트루시아"
     ],
     "center": {
       "x": 642,
@@ -3769,7 +4005,10 @@
     ],
     "names": [
       "Maldives",
-      "Maldivas"
+      "Maldivas",
+      "Maldive Islands",
+      "Islas Maldivas",
+      "몰디브"
     ],
     "center": {
       "x": 1402,
@@ -3786,7 +4025,8 @@
     ],
     "names": [
       "Marshall Islands",
-      "Islas Marshall"
+      "Islas Marshall",
+      "마셜 제도"
     ],
     "center": {
       "x": 1920,
@@ -3806,7 +4046,8 @@
       }
     ],
     "names": [
-      "Malta"
+      "Malta",
+      "몰타"
     ],
     "center": {
       "x": 1063,
@@ -3827,7 +4068,8 @@
     ],
     "names": [
       "Mauritius",
-      "Mauricio"
+      "Mauricio",
+      "모리셔스"
     ],
     "center": {
       "x": 1306,
@@ -3843,7 +4085,8 @@
       }
     ],
     "names": [
-      "Nauru"
+      "Nauru",
+      "나우루"
     ],
     "center": {
       "x": 1910,
@@ -3859,7 +4102,9 @@
       }
     ],
     "names": [
-      "Palau"
+      "Palau",
+      "Palaos",
+      "팔라우"
     ],
     "center": {
       "x": 1800,
@@ -4004,7 +4249,8 @@
     ],
     "names": [
       "Solomon Islands",
-      "Islas Salomon"
+      "Islas Salomon",
+      "솔로몬 제도"
     ],
     "center": {
       "x": 1890.6165883763056,
@@ -4026,7 +4272,10 @@
     "names": [
       "Sao Tome and Principe",
       "Santo Tome",
-      "Santo Tome y Principe"
+      "Sao Tome",
+      "Santo Tome y Principe",
+      "상투메 프린시페",
+      "상투메"
     ],
     "center": {
       "x": 1023,
@@ -4050,7 +4299,12 @@
       }
     ],
     "names": [
-      "Seychelles"
+      "Seychelles",
+      "Islas Seychelles",
+      "Seychelles Islands",
+      "Republic of Seychelles",
+      "Republica de Seychelles",
+      "세이셸"
     ],
     "center": {
       "x": 1248,
@@ -4082,7 +4336,8 @@
       }
     ],
     "names": [
-      "Tonga"
+      "Tonga",
+      "통가"
     ],
     "center": {
       "x": 12,
@@ -4104,7 +4359,9 @@
     "names": [
       "Trinidad and Tobago",
       "Trinidad y Tobago",
-      "Trinidad"
+      "Trinidad",
+      "트리니다드 토바고",
+      "트리니다드"
     ],
     "center": {
       "x": 640,
@@ -4120,7 +4377,8 @@
       }
     ],
     "names": [
-      "Tuvalu"
+      "Tuvalu",
+      "투발루"
     ],
     "center": {
       "x": 1990,
@@ -4141,7 +4399,10 @@
       "Grenadines",
       "San Vicente y las Granadinas",
       "San Vicente",
-      "Granadinas"
+      "Granadinas",
+      "세인트빈센트 그레나딘",
+      "세인트빈센트",
+      "그레나딘"
     ],
     "center": {
       "x": 642,
@@ -4225,7 +4486,8 @@
       }
     ],
     "names": [
-      "Vanuatu"
+      "Vanuatu",
+      "바누아투"
     ],
     "center": {
       "x": 1922.667580674052,
@@ -4245,7 +4507,8 @@
       }
     ],
     "names": [
-      "Samoa"
+      "Samoa",
+      "사모아"
     ],
     "center": {
       "x": 16,
@@ -4298,7 +4561,8 @@
     ],
     "names": [
       "Fiji",
-      "Fiyi"
+      "Fiyi",
+      "피지"
     ],
     "center": {
       "x": 1981,
@@ -4314,7 +4578,8 @@
       }
     ],
     "names": [
-      "Andorra"
+      "Andorra",
+      "안도라"
     ],
     "center": {
       "x": 995,
@@ -4330,7 +4595,8 @@
       }
     ],
     "names": [
-      "Monaco"
+      "Monaco",
+      "모나코"
     ],
     "center": {
       "x": 1022,
@@ -4346,7 +4612,8 @@
       }
     ],
     "names": [
-      "San Marino"
+      "San Marino",
+      "산마리노"
     ],
     "center": {
       "x": 1053,
@@ -4365,7 +4632,9 @@
       "Vatican City",
       "Vatican",
       "Vaticano",
-      "Ciudad del Vaticano"
+      "Ciudad del Vaticano",
+      "바티칸 시티",
+      "바티칸"
     ],
     "center": {
       "x": 1055,
@@ -4381,7 +4650,8 @@
       }
     ],
     "names": [
-      "Liechtenstein"
+      "Liechtenstein",
+       "리히텐슈타인"
     ],
     "center": {
       "x": 1035,
@@ -4397,7 +4667,8 @@
       }
     ],
     "names": [
-      "Kiribati"
+      "Kiribati",
+      "키리바시"
     ],
     "center": {
       "x": 108,
@@ -4414,7 +4685,8 @@
     ],
     "names": [
       "Singapore",
-      "Singapur"
+      "Singapur",
+      "싱가포르"
     ],
     "center": {
       "x": 1575,
