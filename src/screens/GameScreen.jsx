@@ -190,7 +190,7 @@ export default function GameScreen() {
           onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
           onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
         >
-          {showMissingMarkers ? 'Hide Missing Countries' : 'Show Missing Countries'}
+          {'Toggle Missing Countries'}
         </button>
 
         <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
