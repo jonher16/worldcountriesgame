@@ -64,13 +64,94 @@ export default function StatsScreen() {
   }, [submissionStatus, navigate]);
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="stats-container">
+      {/* Inject media query overrides for mobile */}
+      <style>{`
+        @media (max-width: 600px) {
+          .back-button {
+            top: 10px !important;
+            right: 10px !important;
+            padding: 6px 12px !important;
+            font-size: 14px !important;
+          }
+          .header .title {
+            font-size: 24px !important;
+          }
+          .header .stats {
+            font-size: 16px !important;
+            gap: 20px !important;
+          }
+          .congratsText, .finishText {
+            font-size: 20px !important;
+          }
+          .country-list-container {
+            max-width: 90% !important;
+            max-height: 50vh !important;
+            padding: 5px !important;
+            margin-bottom: 5px !important;
+            flex: 1 1 auto !important;
+            overflow: hidden !important;
+          }
+          .section-title {
+            font-size: 18px !important;
+          }
+          .country-item, .country-item-missed {
+            font-size: 12px !important;
+            padding: 6px 8px !important;
+            margin: 3px !important;
+          }
+          .stats-form {
+            max-width: 90% !important;
+            padding: 5px !important;
+            margin: 0 auto 5px auto !important;
+            flex: 0 0 auto !important;
+          }
+          .stats-form .label {
+            font-size: 16px !important;
+          }
+          .stats-form .input {
+            padding: 8px !important;
+            font-size: 14px !important;
+          }
+          .stats-form .button, .stats-form .button-disabled {
+            padding: 10px !important;
+            font-size: 14px !important;
+          }
+          .status-message {
+            font-size: 14px !important;
+            padding: 10px 15px !important;
+          }
+          /* FORCE ALL CONTENT TO FIT THE VIEWPORT */
+          .stats-container {
+            height: 100vh !important;
+            overflow: hidden !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            padding: 10px !important;
+          }
+          .header {
+            flex: 0 0 auto;
+            margin-bottom: 5px !important;
+          }
+          .country-list-container {
+            flex: 1 1 auto;
+          }
+          .stats-form {
+            flex: 0 0 auto;
+          }
+        }
+      `}</style>
+
       {/* Back to Main Screen Button */}
       <button
+        className="back-button"
         style={styles.backButton}
         onClick={() => navigate('/')}
         onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.borderColor = 'transparent')
+        }
       >
         Home
       </button>
@@ -83,9 +164,10 @@ export default function StatsScreen() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           style={styles.header}
+          className="header"
         >
-          <h1 style={styles.title}>Game Stats</h1>
-          <div style={styles.stats}>
+          <h1 style={styles.title} className="title">Game Stats</h1>
+          <div style={styles.stats} className="stats">
             <div style={styles.statItem}>
               <span style={styles.statLabel}>Countries Identified:</span>
               <span style={styles.statValue}>
@@ -104,7 +186,7 @@ export default function StatsScreen() {
 
       {/* Finish Animation */}
       <AnimatePresence>
-        {score === totalCountries && (
+        {score === totalCountries ? (
           <motion.div
             key="congrats"
             initial={{ scale: 0 }}
@@ -112,12 +194,11 @@ export default function StatsScreen() {
             exit={{ scale: 0 }}
             style={styles.congrats}
           >
-            <h2 style={styles.congratsText}>
+            <h2 style={styles.congratsText} className="congratsText">
               🎉 Congratulations! You identified all countries! 🎉
             </h2>
           </motion.div>
-        )}
-        {score !== totalCountries && (
+        ) : (
           <motion.div
             key="finish"
             initial={{ opacity: 0 }}
@@ -125,22 +206,30 @@ export default function StatsScreen() {
             exit={{ opacity: 0 }}
             style={styles.finishAnimation}
           >
-            <h2 style={styles.finishText}>🏁 Game Finished! 🏁</h2>
+            <h2 style={styles.finishText} className="finishText">
+              🏁 Game Finished! 🏁
+            </h2>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Country List */}
-      <div style={styles.countryListContainer}>
-        <div style={styles.countryList}>
+      <div
+        style={styles.countryListContainer}
+        className="country-list-container"
+      >
+        <div>
           {/* Matched Countries */}
-          <div style={styles.matchedSection}>
-            <h3 style={styles.sectionTitle}>✅ Correctly Identified</h3>
+          <div>
+            <h3 style={styles.sectionTitle} className="section-title">
+              ✅ Correctly Identified
+            </h3>
             <div style={styles.countriesGrid}>
               {matchedCountryObjects.map((country) => (
                 <motion.div
                   key={country.class}
                   style={styles.countryItem}
+                  className="country-item"
                   whileHover={{ scale: 1.05 }}
                 >
                   {country.class}
@@ -149,13 +238,16 @@ export default function StatsScreen() {
             </div>
           </div>
           {/* Missed Countries */}
-          <div style={styles.missedSection}>
-            <h3 style={styles.sectionTitle}>❌ Missed</h3>
+          <div>
+            <h3 style={styles.sectionTitle} className="section-title">
+              ❌ Missed
+            </h3>
             <div style={styles.countriesGrid}>
               {missedCountryObjects.map((country) => (
                 <motion.div
                   key={country.class}
                   style={styles.countryItemMissed}
+                  className="country-item-missed"
                   whileHover={{ scale: 1.05 }}
                 >
                   {country.class}
@@ -166,9 +258,9 @@ export default function StatsScreen() {
         </div>
       </div>
 
-      {/* Player Name Input */}
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <label htmlFor="playerName" style={styles.label}>
+      {/* Player Name Input Form */}
+      <form style={styles.form} className="stats-form" onSubmit={handleSubmit}>
+        <label htmlFor="playerName" style={styles.label} className="label">
           Enter Your Name:
         </label>
         <input
@@ -177,17 +269,21 @@ export default function StatsScreen() {
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
           style={styles.input}
+          className="input"
           placeholder="Your Name"
           required
         />
         <button
           type="submit"
           style={isSaved ? styles.buttonDisabled : styles.button}
+          className={isSaved ? 'button-disabled' : 'button'}
           disabled={isSaved || isSubmitting}
           onMouseEnter={(e) =>
             !isSaved && (e.currentTarget.style.borderColor = '#8A2BE2')
           }
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.borderColor = 'transparent')
+          }
         >
           {isSubmitting
             ? 'Submitting...'
@@ -206,6 +302,7 @@ export default function StatsScreen() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             style={styles.statusMessageSuccess}
+            className="status-message"
           >
             <p>Score saved successfully! 🎉 Redirecting to main screen...</p>
           </motion.div>
@@ -217,6 +314,7 @@ export default function StatsScreen() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             style={styles.statusMessageError}
+            className="status-message"
           >
             <p>Failed to save score. Please try again.</p>
           </motion.div>
@@ -229,7 +327,7 @@ export default function StatsScreen() {
 const styles = {
   container: {
     padding: '20px',
-    background: '#333', // Dark background for the container
+    background: '#333',
     minHeight: '100vh',
     fontFamily: 'Arial, sans-serif',
     boxSizing: 'border-box',
@@ -257,7 +355,7 @@ const styles = {
   },
   title: {
     fontSize: '32px',
-    color: '#ffffff', // White title to contrast with the dark background
+    color: '#ffffff',
     marginBottom: '10px',
   },
   stats: {
@@ -278,10 +376,10 @@ const styles = {
   },
   statValue: {
     fontSize: '22px',
-    color: '#7dd87d', // Green for stats values
+    color: '#7dd87d',
   },
   congrats: {
-    background: 'linear-gradient(135deg, #8A2BE2 0%, #7dd87d 100%)', // Gradient to make it pop
+    background: 'linear-gradient(135deg, #8A2BE2 0%, #7dd87d 100%)',
     padding: '15px',
     borderRadius: '10px',
     textAlign: 'center',
@@ -307,7 +405,7 @@ const styles = {
     maxHeight: '40vh',
     overflowY: 'auto',
     margin: '0 auto',
-    background: '#444', // Darker shade for the list container
+    background: '#444',
     padding: '20px',
     borderRadius: '10px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
@@ -333,7 +431,7 @@ const styles = {
     margin: '5px',
     padding: '8px 12px',
     borderRadius: '5px',
-    backgroundColor: '#7dd87d', // Bright green for correct answers
+    backgroundColor: '#7dd87d',
     color: '#ffffff',
     boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
   },
@@ -342,7 +440,7 @@ const styles = {
     margin: '5px',
     padding: '8px 12px',
     borderRadius: '5px',
-    backgroundColor: '#f96d6d', // Bright red for missed countries
+    backgroundColor: '#f96d6d',
     color: '#ffffff',
     boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
   },

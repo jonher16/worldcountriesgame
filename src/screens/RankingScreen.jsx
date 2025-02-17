@@ -75,7 +75,8 @@ export default function RankingScreen() {
       const matchedCountries = player.matchedCountries || [];
       matchedCountries.forEach((country) => {
         const normalizedCountry = normalizeCountryName(country);
-        countryCounts[normalizedCountry] = (countryCounts[normalizedCountry] || 0) + 1;
+        countryCounts[normalizedCountry] =
+          (countryCounts[normalizedCountry] || 0) + 1;
       });
     });
 
@@ -118,7 +119,6 @@ export default function RankingScreen() {
     const hue = (percentage * 120) / 100; // 0 (red) to 120 (green)
     const lightness = 60;
     const saturation = 60; // Lower saturation for a muted color
-
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
@@ -133,7 +133,9 @@ export default function RankingScreen() {
             style={styles.backButton}
             onClick={() => navigate('/')}
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.borderColor = 'transparent')
+            }
           >
             Home
           </button>
@@ -163,13 +165,13 @@ export default function RankingScreen() {
                 <h2 style={styles.placeTitle}>{index + 1}</h2>
                 <p style={styles.playerName}>{player.name}</p>
                 <p style={styles.playerScore}>
-                  Score: {player.score}<br></br>
+                  Score: {player.score}
+                  <br />
                   Time: {formatTime(player.timeTaken)}
                 </p>
-                <p style={styles.playerScore}>
-                 
+                <p style={styles.playerDatePodium}>
+                  Date: {formatDate(player.date)}
                 </p>
-                <p style={styles.playerDatePodium}>Date: {formatDate(player.date)}</p> {/* New Line */}
               </motion.div>
             ))}
           </div>
@@ -183,8 +185,12 @@ export default function RankingScreen() {
                   <span style={styles.top50Rank}>{index + 1}.</span>
                   <span style={styles.top50Name}>{player.name}</span>
                   <span style={styles.top50Score}>Score: {player.score}</span>
-                  <span style={styles.top50Time}>Time: {formatTime(player.timeTaken)}</span>
-                  <span style={styles.top50Date}>{formatDate(player.date)}</span> {/* New Line */}
+                  <span style={styles.top50Time}>
+                    Time: {formatTime(player.timeTaken)}
+                  </span>
+                  <span style={styles.top50Date}>
+                    {formatDate(player.date)}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -200,7 +206,7 @@ export default function RankingScreen() {
           <div style={styles.countryStatsContainer}>
             <h2 style={styles.sectionTitle}>📊 Country Accuracy 📊</h2>
             <ul style={styles.countryStatsList}>
-              {sortedCountryStats.map(([countryName, percentage], index) => (
+              {sortedCountryStats.map(([countryName, percentage]) => (
                 <li
                   key={countryName}
                   style={{
@@ -231,9 +237,9 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     boxSizing: 'border-box',
     overflowY: 'auto',
-    maxHeight: '100vh',
     width: '100vw',
-    position: 'relative', // Ensure positioning context for backButton
+    position: 'relative', // For backButton positioning
+    maxHeight: '100vh'
   },
   backButton: {
     position: 'fixed',
@@ -247,7 +253,7 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     transition: 'border-color 0.3s ease',
-    zIndex: 1000, // Ensure the button stays on top
+    zIndex: 1000,
   },
   title: {
     fontSize: '48px',
@@ -262,7 +268,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'flex-end',
     marginBottom: '60px',
-    flexWrap: 'wrap', // Allows wrapping on smaller screens
+    flexWrap: 'wrap',
     gap: '20px',
   },
   podiumPlace: {
@@ -292,7 +298,6 @@ const styles = {
   placeTitle: {
     fontSize: '28px',
     marginBottom: '5px',
-    //fontWeight: 'bold',
   },
   playerName: {
     fontSize: '22px',
@@ -302,11 +307,6 @@ const styles = {
   playerScore: {
     fontSize: '18px',
   },
-  playerDate: {
-    fontSize: '16px',
-    marginTop: '5px',
-    color: '#ccc',
-  },
   playerDatePodium: {
     fontSize: '16px',
     marginTop: '5px',
@@ -314,7 +314,7 @@ const styles = {
   },
   top50Container: {
     marginBottom: '60px',
-    overflowX: 'auto', // Allow horizontal scrolling on small screens
+    overflowX: 'auto',
   },
   sectionTitle: {
     fontSize: '32px',
@@ -325,12 +325,12 @@ const styles = {
     listStyleType: 'none',
     padding: 0,
     margin: 0,
-    minWidth: '600px', // Ensure a minimum width for table-like layout
+    // Removed minWidth: '600px' for a responsive layout on mobile
   },
   top50Item: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center', // Align items vertically centered
+    alignItems: 'center',
     padding: '10px',
     background: '#444',
     marginBottom: '5px',
@@ -339,11 +339,9 @@ const styles = {
   top50Rank: {
     width: '5%',
     textAlign: 'center',
-    //fontWeight: 'bold',
   },
   top50Name: {
     width: '25%',
-    //fontWeight: 'bold',
   },
   top50Score: {
     width: '20%',
@@ -351,7 +349,7 @@ const styles = {
   },
   top50Time: {
     width: '20%',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   top50Date: {
     width: '30%',
@@ -363,7 +361,7 @@ const styles = {
     marginBottom: '60px',
   },
   countryStatsContainer: {
-    marginBottom: '60px'
+    marginBottom: '60px',
   },
   countryStatsList: {
     listStyleType: 'none',
