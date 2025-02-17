@@ -1,4 +1,3 @@
-// src/screens/GameScreen.js
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CountryMap from '../components/CountryMap';
@@ -13,14 +12,14 @@ export default function GameScreen() {
   const [timeLeft, setTimeLeft] = useState(720);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showCountryList, setShowCountryList] = useState(false);
-  const [showMissingMarkers, setShowMissingMarkers] = useState(false); // Toggle for missing markers
+  const [showMissingMarkers, setShowMissingMarkers] = useState(false); // Toggle for missing country markers
   const [flashColor, setFlashColor] = useState(null); // 'green' or 'red'
 
   const totalCountries = countryData.length;
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
-  // Auto-focus on input when component mounts
+  // Auto-focus on input when the component mounts
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
@@ -28,7 +27,9 @@ export default function GameScreen() {
   // Clear flash effect after 500ms
   useEffect(() => {
     if (flashColor) {
-      const timer = setTimeout(() => setFlashColor(null), 500);
+      const timer = setTimeout(() => {
+        setFlashColor(null);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [flashColor]);
@@ -38,6 +39,7 @@ export default function GameScreen() {
     if (trimmedInput === '') return;
 
     const countryClassName = validateCountry(trimmedInput);
+
     if (countryClassName && !matchedCountries.includes(countryClassName)) {
       setMatchedCountries([...matchedCountries, countryClassName]);
       setFlashColor('green'); // Correct submission: flash neon green
@@ -64,6 +66,7 @@ export default function GameScreen() {
     const missingCountries = countryData.filter(
       (country) => !matchedCountries.includes(country.class)
     );
+
     return (
       <>
         {missingCountries.map((country) => (
@@ -79,8 +82,13 @@ export default function GameScreen() {
     );
   };
 
-  const toggleCountryList = () => setShowCountryList(!showCountryList);
-  const toggleMissingMarkers = () => setShowMissingMarkers(!showMissingMarkers);
+  const toggleCountryList = () => {
+    setShowCountryList(!showCountryList);
+  };
+
+  const toggleMissingMarkers = () => {
+    setShowMissingMarkers(!showMissingMarkers);
+  };
 
   useEffect(() => {
     if (timeLeft === 0 || matchedCountries.length === totalCountries) {
@@ -96,14 +104,17 @@ export default function GameScreen() {
   }, [timeLeft, matchedCountries, totalCountries, navigate]);
 
   const renderCountryList = () => {
-    const sortedCountries = countryData.map((c) => c.class).sort();
+    const sortedCountries = countryData
+      .map((country) => country.class)
+      .sort();
+
     return (
-      <div style={styles.countryListOverlay} className="country-list-overlay">
+      <div style={styles.countryListOverlay}>
         <h3>Country List</h3>
         <ul style={styles.countryList}>
           {sortedCountries.map((countryName) => (
             <li key={countryName} style={styles.countryItem}>
-              {matchedCountries.includes(countryName) ? countryName : '_____'}
+              {matchedCountries.includes(countryName) ? countryName : '_____' }
             </li>
           ))}
         </ul>
@@ -112,8 +123,8 @@ export default function GameScreen() {
   };
 
   return (
-    <div style={styles.container}>
-      {/* Flash overlay */}
+    <div>
+      {/* Flash overlay styles */}
       <style>{`
         .flash-overlay {
           position: fixed;
@@ -130,29 +141,22 @@ export default function GameScreen() {
           z-index: 9999;
         }
         @keyframes ledFlash {
-          0% { opacity: 0; transform: scale(0.95); }
-          50% { opacity: 1; transform: scale(1.0); }
-          100% { opacity: 0; transform: scale(1.05); }
-        }
-        
-        /* MOBILE OVERRIDES */
-        @media (max-width: 600px) {
-          .game-screen-container {
-            /* Ensure the overall container stays fixed */
-            height: 100vh !important;
-            width: 100vw !important;
-            overflow: hidden !important;
+          0% {
+            opacity: 0;
+            transform: scale(0.95);
           }
-          .input-box {
-            /* Force the input to remain visible at the bottom */
-            width: 90% !important;
-            margin-top: 5px !important;
-            font-size: 14px !important;
+          50% {
+            opacity: 1;
+            transform: scale(1.0);
           }
-          /* You can adjust further as needed */
+          100% {
+            opacity: 0;
+            transform: scale(1.05);
+          }
         }
       `}</style>
 
+      {/* Render the flash overlay over the entire viewport */}
       {flashColor && (
         <div
           className="flash-overlay"
@@ -162,149 +166,83 @@ export default function GameScreen() {
         />
       )}
 
-      {/* Fixed Control Buttons */}
-      <button
-        style={styles.endGameButton}
-        className="game-button"
-        onClick={handleEndGameClick}
-        onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-        onMouseLeave={(e) =>
-          (e.currentTarget.style.borderColor = 'transparent')
-        }
-      >
-        End Game
-      </button>
-      <button
-        style={styles.toggleListButton}
-        className="game-button"
-        onClick={toggleCountryList}
-        onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-        onMouseLeave={(e) =>
-          (e.currentTarget.style.borderColor = 'transparent')
-        }
-      >
-        Toggle Country List
-      </button>
-      <button
-        style={styles.showMissingButton}
-        className="game-button"
-        onClick={toggleMissingMarkers}
-        onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-        onMouseLeave={(e) =>
-          (e.currentTarget.style.borderColor = 'transparent')
-        }
-      >
-        Toggle Missing Countries
-      </button>
+      {/* Main game container */}
+      <div style={styles.container}>
+        <button
+          style={styles.endGameButton}
+          onClick={handleEndGameClick}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+        >
+          End Game
+        </button>
+        <button
+          style={styles.toggleListButton}
+          onClick={toggleCountryList}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+        >
+          Toggle Country List
+        </button>
+        <button  
+          style={styles.showMissingButton} 
+          onClick={toggleMissingMarkers}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+        >
+          {'Toggle Missing Countries'}
+        </button>
 
-      {/* Main Game Screen Layout */}
-      <div style={styles.containerInner} className="game-screen-container">
-        {/* Top Section: Timer and Map */}
-        <div style={styles.topSection}>
-          <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
-          <div style={styles.mapContainer}>
-            <CountryMap matchedCountries={matchedCountries}>
-              {showMissingMarkers && renderMissingMarkers()}
-            </CountryMap>
+        <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+        <CountryMap matchedCountries={matchedCountries}>
+          {showMissingMarkers && renderMissingMarkers()}
+        </CountryMap>
+        <Progress total={totalCountries} matched={matchedCountries.length} />
+        <input
+          ref={inputRef}
+          style={styles.input}
+          placeholder="Enter a country"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
+        />
+
+        {showCountryList && renderCountryList()}
+
+        {showConfirmation && (
+          <div style={styles.modalOverlay}>
+            <div style={styles.modal}>
+              <p>Are you sure you want to quit? Your game will not be saved.</p>
+              <button style={styles.confirmButton} onClick={handleConfirmQuit}>
+                Yes, Quit
+              </button>
+              <button style={styles.cancelButton} onClick={handleCancelQuit}>
+                Cancel
+              </button>
+            </div>
           </div>
-        </div>
-        {/* Bottom Section: Progress and Input */}
-        <div style={styles.bottomSection}>
-          <div style={styles.progressContainer}>
-            <Progress total={totalCountries} matched={matchedCountries.length} />
-          </div>
-          <div style={styles.inputContainer}>
-            <input
-              ref={inputRef}
-              className="input-box"
-              style={styles.input}
-              placeholder="Enter a country"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
-            />
-          </div>
-        </div>
+        )}
       </div>
-
-      {showCountryList && renderCountryList()}
-
-      {showConfirmation && (
-        <div style={styles.modalOverlay}>
-          <div style={styles.modal}>
-            <p>Are you sure you want to quit? Your game will not be saved.</p>
-            <button style={styles.confirmButton} onClick={handleConfirmQuit}>
-              Yes, Quit
-            </button>
-            <button style={styles.cancelButton} onClick={handleCancelQuit}>
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 
 const styles = {
   container: {
-    position: 'fixed', // Occupies entire viewport
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    background: '#242424',
-    fontFamily: 'Arial, sans-serif',
-    boxSizing: 'border-box',
-    overflow: 'hidden',
-  },
-  // Inner container divides the screen into top and bottom sections.
-  containerInner: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-  },
-  topSection: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '5px',
-  },
-  mapContainer: {
-    flex: 1,
-    width: '100%',
-    maxWidth: '500px',
+    padding: '20px',
     position: 'relative',
-    margin: '10px 0',
-  },
-  bottomSection: {
-    flex: '0 0 25%', // Reserve 25% of viewport height for progress and input
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '5px',
-  },
-  progressContainer: {
-    width: '100%',
-    maxWidth: '500px',
-    marginBottom: '5px',
-  },
-  inputContainer: {
-    width: '100%',
-    maxWidth: '500px',
+    // Optionally, ensure your container takes up the navigator's full space:
+    minHeight: '100vh',
+    boxSizing: 'border-box',
   },
   input: {
     border: '1px solid #333',
     padding: '10px',
     fontSize: '16px',
+    margin: '20px 0',
     textAlign: 'center',
     width: '100%',
-    boxSizing: 'border-box',
   },
-  // Fixed control buttons
   endGameButton: {
     position: 'fixed',
     top: '20px',
@@ -318,21 +256,6 @@ const styles = {
     fontSize: '16px',
     transition: 'border-color 0.3s, background-color 0.3s',
     outline: 'none',
-    zIndex: 9999,
-  },
-  toggleListButton: {
-    position: 'fixed',
-    top: '120px',
-    right: '20px',
-    padding: '10px 20px',
-    backgroundColor: '#333',
-    color: '#fff',
-    border: '2px solid transparent',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    fontSize: '16px',
-    transition: 'border-color 0.3s, background-color 0.3s',
-    zIndex: 9999,
   },
   showMissingButton: {
     position: 'fixed',
@@ -346,9 +269,22 @@ const styles = {
     cursor: 'pointer',
     fontSize: '16px',
     transition: 'border-color 0.3s, background-color 0.3s',
-    zIndex: 9999,
+    zIndex: '9999',
   },
-  // Country list overlay and modal (unchanged)
+  toggleListButton: {
+    position: 'fixed',
+    top: '120px',
+    right: '20px',
+    padding: '10px 20px',
+    backgroundColor: '#333',
+    color: '#fff',
+    border: '2px solid transparent',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '16px',
+    transition: 'border-color 0.3s, background-color 0.3s',
+    zIndex: '9999',
+  },
   countryListOverlay: {
     position: 'fixed',
     top: 0,
@@ -359,7 +295,7 @@ const styles = {
     color: '#fff',
     padding: '20px',
     overflowY: 'auto',
-    zIndex: 1000,
+    zIndex: 9998,
   },
   countryList: {
     listStyleType: 'none',
