@@ -141,22 +141,33 @@ export default function GameScreen() {
           z-index: 9999;
         }
         @keyframes ledFlash {
-          0% {
-            opacity: 0;
-            transform: scale(0.95);
+          0% { opacity: 0; transform: scale(0.95); }
+          50% { opacity: 1; transform: scale(1.0); }
+          100% { opacity: 0; transform: scale(1.05); }
+        }
+        /* MOBILE OVERRIDE: Fix the input so it stays visible */
+        @media (max-width: 600px) {
+          .game-input-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 1000;
           }
-          50% {
-            opacity: 1;
-            transform: scale(1.0);
+          .countryListOverlay {
+            width: 100%;
           }
-          100% {
-            opacity: 0;
-            transform: scale(1.05);
+          /* Add bottom padding so map isn’t hidden behind the fixed input */
+          .container {
+            padding-bottom: 70px;
           }
+            
         }
       `}</style>
 
-      {/* Render the flash overlay over the entire viewport */}
       {flashColor && (
         <div
           className="flash-overlay"
@@ -167,7 +178,7 @@ export default function GameScreen() {
       )}
 
       {/* Main game container */}
-      <div style={styles.container}>
+      <div style={styles.container} className="container">
         <button
           style={styles.endGameButton}
           onClick={handleEndGameClick}
@@ -182,7 +193,7 @@ export default function GameScreen() {
           onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
           onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
         >
-          Toggle Country List
+          Toggle List
         </button>
         <button  
           style={styles.showMissingButton} 
@@ -190,7 +201,7 @@ export default function GameScreen() {
           onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
           onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
         >
-          {'Toggle Missing Countries'}
+          Toggle Missing
         </button>
 
         <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
@@ -198,14 +209,18 @@ export default function GameScreen() {
           {showMissingMarkers && renderMissingMarkers()}
         </CountryMap>
         <Progress total={totalCountries} matched={matchedCountries.length} />
-        <input
-          ref={inputRef}
-          style={styles.input}
-          placeholder="Enter a country"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
-        />
+
+        {/* Wrap the input in a container that is fixed on mobile */}
+        <div className="game-input-container">
+          <input
+            ref={inputRef}
+            style={styles.input}
+            placeholder="Enter a country"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
+          />
+        </div>
 
         {showCountryList && renderCountryList()}
 
@@ -231,7 +246,7 @@ const styles = {
   container: {
     padding: '20px',
     position: 'relative',
-    // Optionally, ensure your container takes up the navigator's full space:
+    // Ensure your container takes up the navigator's full space:
     minHeight: '100vh',
     boxSizing: 'border-box',
   },
@@ -239,7 +254,6 @@ const styles = {
     border: '1px solid #333',
     padding: '10px',
     fontSize: '16px',
-    margin: '20px 0',
     textAlign: 'center',
     width: '100%',
   },
@@ -256,10 +270,11 @@ const styles = {
     fontSize: '16px',
     transition: 'border-color 0.3s, background-color 0.3s',
     outline: 'none',
+    zIndex: '9999',
   },
   showMissingButton: {
     position: 'fixed',
-    top: '70px',
+    top: '90px',
     right: '20px',
     padding: '10px 20px',
     backgroundColor: '#333',
@@ -273,7 +288,7 @@ const styles = {
   },
   toggleListButton: {
     position: 'fixed',
-    top: '120px',
+    top: '140px',
     right: '20px',
     padding: '10px 20px',
     backgroundColor: '#333',
@@ -289,7 +304,7 @@ const styles = {
     position: 'fixed',
     top: 0,
     left: 0,
-    width: '300px',
+    width: '70%',
     height: '100%',
     backgroundColor: 'rgba(36, 36, 36, 0.9)',
     color: '#fff',
