@@ -18,7 +18,7 @@ function Earth({ tilt = 0.41 }) {
       <meshStandardMaterial map={texture} />
     </mesh>
   );
-}   
+}
 
 export default function HomeScreen() {
   const navigate = useNavigate();
@@ -40,22 +40,17 @@ export default function HomeScreen() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        <Canvas
-          style={{
-            display: 'block',
-            margin: '0 auto',
-            width: '500px',
-            height: '450px',
-          }}
-          dpr={window.devicePixelRatio}
-        >
-          <ambientLight intensity={4.5} />
-          <directionalLight position={[5, 5, 5]} intensity={2} />
+        {/* Responsive Canvas Container */}
+        <div style={styles.canvasWrapper}>
+          <Canvas dpr={window.devicePixelRatio} style={styles.canvas}>
+            <ambientLight intensity={4.5} />
+            <directionalLight position={[5, 5, 5]} intensity={2} />
 
-          <Earth tilt={0.41} />
+            <Earth tilt={0.41} />
 
-          <OrbitControls autoRotate autoRotateSpeed={2} enableZoom={false} />
-        </Canvas>
+            <OrbitControls autoRotate autoRotateSpeed={2} enableZoom={false} />
+          </Canvas>
+        </div>
       </motion.div>
 
       <motion.p
@@ -114,18 +109,36 @@ const styles = {
     padding: '10px',
   },
   title: {
-    fontSize: '64px',
+    fontSize: 'clamp(36px, 5vw, 64px)', // Responsive font size
     marginBottom: '20px',
   },
   earthContainer: {
     margin: '20px auto',
+    width: '100%',
+    maxWidth: '500px', // Keeps the content from stretching too wide
+  },
+  // Wrapper that maintains the aspect ratio (450/500 = 90%)
+  canvasWrapper: {
+    position: 'relative',
+    width: '100%',
+    paddingTop: '90%',
+  },
+  // Canvas fills the wrapper
+  canvas: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
   },
   subtitle: {
-    fontSize: '24px',
+    fontSize: 'clamp(20px, 4vw, 24px)', // Responsive font size
     marginBottom: '20px',
   },
+  // Stack buttons vertically on small screens (using flex wrap)
   buttonContainer: {
     display: 'flex',
+    flexWrap: 'wrap',
     gap: '30px',
     justifyContent: 'center',
   },
@@ -136,7 +149,7 @@ const styles = {
     border: '2px solid transparent',
     borderRadius: '8px',
     cursor: 'pointer',
-    fontSize: '18px',
+    fontSize: 'clamp(16px, 4vw, 18px)', // Responsive font size
     transition: 'border-color 0.3s, background-color 0.3s',
     outline: 'none',
   },
