@@ -174,6 +174,7 @@ const styles = {
     fontSize: 'clamp(20px, 4vw, 24px)',
     marginBottom: '20px',
   },
+  // Stack buttons vertically on small screens (using flex wrap)
   buttonContainer: {
     display: 'flex',
     flexWrap: 'wrap',
