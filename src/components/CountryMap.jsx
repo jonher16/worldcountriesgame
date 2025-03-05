@@ -1,4 +1,4 @@
-// src/components/CountryMap.js
+// src/components/CountryMap.jsx
 import { useState } from 'react';
 import countryPaths from '../assets/updated_grouped_country_paths.json';
 
@@ -55,13 +55,38 @@ export default function CountryMap({ matchedCountries, children }) {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="country-map-wrapper">
+      <style>{`
+        @media (max-width: 768px) {
+          .country-map-wrapper {
+            height: 100% !important;
+            width: 100% !important;
+            touch-action: manipulation !important;  
+          }
+          
+          .map-svg {
+            height: 100% !important;
+            width: 100% !important;
+            touch-action: manipulation !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+          }
+          
+          /* This helps prevent "bounce" scrolling on iOS */
+          svg {
+            max-height: 100% !important;
+            max-width: 100% !important;
+            display: block !important;
+          }
+        }
+      `}</style>
       <svg
         width="100%"
         height="100%"
         viewBox={viewBox}
         onClick={handleLeftClick}
         onContextMenu={handleRightClick} // Right-click to zoom out
+        className="map-svg"
       >
         {countryPaths.map((country) =>
           country.paths.map((path, index) => (
@@ -80,6 +105,7 @@ export default function CountryMap({ matchedCountries, children }) {
   );
 }
 
+// Maintain original styles for desktop
 const styles = {
   container: {
     display: 'flex',

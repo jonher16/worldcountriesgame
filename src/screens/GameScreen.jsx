@@ -1,3 +1,4 @@
+// src/screens/GameScreen.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CountryMap from '../components/CountryMap';
@@ -55,7 +56,14 @@ export default function GameScreen() {
 
   const handleConfirmQuit = () => {
     setShowConfirmation(false);
-    navigate('/stats');
+    navigate('/stats', {
+      state: {
+        score: matchedCountries.length,
+        missed: totalCountries - matchedCountries.length,
+        timeTaken: 720 - timeLeft,
+        matchedCountries: matchedCountries,
+      },
+    });
   };
 
   const handleCancelQuit = () => {
@@ -109,7 +117,7 @@ export default function GameScreen() {
       .sort();
 
     return (
-      <div style={styles.countryListOverlay}>
+      <div style={styles.countryListOverlay} className="country-list-overlay">
         <h3>Country List</h3>
         <ul style={styles.countryList}>
           {sortedCountries.map((countryName) => (
@@ -145,26 +153,74 @@ export default function GameScreen() {
           50% { opacity: 1; transform: scale(1.0); }
           100% { opacity: 0; transform: scale(1.05); }
         }
-        /* MOBILE OVERRIDE: Fix the input so it stays visible */
-        @media (max-width: 600px) {
-          .game-input-container {
-            position: fixed;
-            bottom: 0;
+        
+        /* Mobile optimization that preserves desktop experience */
+        @media (max-width: 768px) {
+          /* Entire container spans full height */
+          .game-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh !important;
+            max-height: 100vh !important;
+            overflow: hidden !important;
+            padding: 10px !important;
+            position: fixed !important;
+            width: 100vw !important;
+            top: 0;
             left: 0;
-            width: 100%;
-            background: #333;
-            padding: 10px;
-            box-sizing: border-box;
-            z-index: 1000;
           }
-          .countryListOverlay {
-            width: 100%;
+          
+          /* Sticky input area at bottom */
+          .game-input-container {
+            position: sticky !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background: rgba(51, 51, 51, 0.9) !important;
+            padding: 10px !important;
+            z-index: 100 !important;
+            margin-top: auto !important;
           }
-          /* Add bottom padding so map isn’t hidden behind the fixed input */
-          .container {
-            padding-bottom: 70px;
+          
+          /* Buttons positioning */
+          .action-buttons {
+            position: absolute !important;
+            top: 10px !important;
+            right: 10px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            z-index: 10 !important;
           }
-            
+          
+          .action-buttons button {
+            padding: 8px !important;
+            font-size: 14px !important;
+            white-space: nowrap !important;
+          }
+          
+          /* Make sure map container fills available space */
+          .map-container {
+            flex: 1 !important;
+            min-height: 60vh !important;
+            overflow: hidden !important;
+            margin-bottom: 60px !important; /* Space for the input */
+          }
+          
+          /* Make country list more mobile-friendly */
+          .country-list-overlay {
+            width: 100% !important; 
+            height: 80% !important;
+            z-index: 1001 !important;
+          }
+          
+          /* Game status (timer/progress) */
+          .game-status {
+            padding: 5px !important;
+            margin-top: 10px !important;
+            margin-bottom: 5px !important;
+            z-index: 5 !important;
+          }
         }
       `}</style>
 
@@ -177,38 +233,48 @@ export default function GameScreen() {
         />
       )}
 
-      {/* Main game container */}
-      <div style={styles.container} className="container">
-        <button
-          style={styles.endGameButton}
-          onClick={handleEndGameClick}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
-        >
-          End Game
-        </button>
-        <button
-          style={styles.toggleListButton}
-          onClick={toggleCountryList}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
-        >
-          Toggle List
-        </button>
-        <button  
-          style={styles.showMissingButton} 
-          onClick={toggleMissingMarkers}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-          onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
-        >
-          Toggle Missing
-        </button>
+      {/* Main game container - using original structure but with classes for mobile targeting */}
+      <div style={styles.container} className="game-container">
+        {/* Action buttons - same layout but with class for mobile positioning */}
+        <div className="action-buttons">
+          <button
+            style={styles.endGameButton}
+            onClick={handleEndGameClick}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+          >
+            End Game
+          </button>
+          <button
+            style={styles.showMissingButton} 
+            onClick={toggleMissingMarkers}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+          >
+            Toggle Missing
+          </button>
+          <button
+            style={styles.toggleListButton}
+            onClick={toggleCountryList}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'transparent')}
+          >
+            Toggle List
+          </button>
+        </div>
 
-        <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
-        <CountryMap matchedCountries={matchedCountries}>
-          {showMissingMarkers && renderMissingMarkers()}
-        </CountryMap>
-        <Progress total={totalCountries} matched={matchedCountries.length} />
+        {/* Game status area - timer and progress */}
+        <div className="game-status">
+          <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+          <Progress total={totalCountries} matched={matchedCountries.length} />
+        </div>
+        
+        {/* Map container */}
+        <div className="map-container">
+          <CountryMap matchedCountries={matchedCountries}>
+            {showMissingMarkers && renderMissingMarkers()}
+          </CountryMap>
+        </div>
 
         {/* Wrap the input in a container that is fixed on mobile */}
         <div className="game-input-container">
@@ -242,6 +308,7 @@ export default function GameScreen() {
   );
 }
 
+// Keep the original styles completely intact!
 const styles = {
   container: {
     padding: '20px',
