@@ -151,7 +151,7 @@ export default function GameScreen() {
   if (isMobile) {
     return (
       <div>
-        {/* Mobile-specific styles */}
+        {/* Mobile-specific styles - REVISED FOR TOP-TO-BOTTOM FLOW */}
         <style>{`
           body {
             overflow: hidden;
@@ -168,7 +168,6 @@ export default function GameScreen() {
             height: 100vh;
             width: 100vw;
             background-color: #333;
-            overflow: hidden;
             position: fixed;
             top: 0;
             left: 0;
@@ -177,13 +176,13 @@ export default function GameScreen() {
           .mobile-buttons-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
+            padding: 8px;
             background-color: #222;
-            z-index: 10;
+            flex-shrink: 0;
           }
           
           .mobile-button {
-            padding: 8px;
+            padding: 6px 8px;
             font-size: 12px;
             background-color: #444;
             color: white;
@@ -193,33 +192,40 @@ export default function GameScreen() {
           
           .mobile-timer-row {
             text-align: center;
-            padding: 5px;
+            padding: 3px;
             background-color: #333;
             color: white;
+            flex-shrink: 0;
           }
-          
-          .mobile-map-container {
-            flex: 1;
-            overflow: hidden;
-            background-color: #333;
-            position: relative;
+
+          /* Reduced timer and progress sizes */
+          .mobile-timer-row p {
+            margin: 2px 0;
+            font-size: 16px !important;
           }
           
           .mobile-input-container {
-            padding: 10px;
-            background-color: #222;
-            width: 100%;
-            box-sizing: border-box;
+            padding: 5px;
+            background-color: #444;
+            flex-shrink: 0;
+            position: relative;
             z-index: 10;
           }
           
           .mobile-input {
             width: 100%;
-            padding: 12px;
+            padding: 8px;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             box-sizing: border-box;
+          }
+          
+          .mobile-map-container {
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+            min-height: 100px; /* Ensure map always has some height */
           }
           
           .mobile-modal {
@@ -262,6 +268,18 @@ export default function GameScreen() {
             z-index: 900;
             overflow: auto;
             padding: 20px;
+          }
+          
+          /* Handle keyboard appearance */
+          @media screen and (max-height: 450px) {
+            /* This media query activates when keyboard appears on most devices */
+            .mobile-map-container {
+              min-height: 50px; /* Reduce map size when keyboard is open */
+            }
+            .mobile-timer-row p {
+              font-size: 14px !important;
+              margin: 0;
+            }
           }
         `}</style>
 
@@ -314,14 +332,7 @@ export default function GameScreen() {
             <Progress total={totalCountries} matched={matchedCountries.length} />
           </div>
           
-          {/* Map container */}
-          <div className="mobile-map-container">
-            <CountryMap matchedCountries={matchedCountries}>
-              {showMissingMarkers && renderMissingMarkers()}
-            </CountryMap>
-          </div>
-          
-          {/* Input container at bottom */}
+          {/* Input container ABOVE the map */}
           <div className="mobile-input-container">
             <input
               ref={inputRef}
@@ -331,6 +342,13 @@ export default function GameScreen() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
             />
+          </div>
+          
+          {/* Map container at the bottom - will shrink when keyboard appears */}
+          <div className="mobile-map-container">
+            <CountryMap matchedCountries={matchedCountries}>
+              {showMissingMarkers && renderMissingMarkers()}
+            </CountryMap>
           </div>
         </div>
         

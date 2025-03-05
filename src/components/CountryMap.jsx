@@ -1,5 +1,5 @@
 // src/components/CountryMap.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import countryPaths from '../assets/updated_grouped_country_paths.json';
 
 export default function CountryMap({ matchedCountries, children }) {
@@ -8,8 +8,10 @@ export default function CountryMap({ matchedCountries, children }) {
   const [isMobile, setIsMobile] = useState(false);
   const originalWidth = 2000;
   const originalHeight = 857;
-  const maxZoomLevel = 4; // Allow only 2 zoom clicks (1 -> 2 -> 4)
+  const maxZoomLevel = isMobile ? 8 : 4; // Higher max zoom for mobile (8x)
   const minZoomLevel = 1;
+  
+  const svgRef = useRef(null);
 
   // Detect mobile device
   useEffect(() => {
@@ -25,16 +27,10 @@ export default function CountryMap({ matchedCountries, children }) {
     };
   }, []);
 
-  const handleInteraction = (event) => {
-    // If on mobile, we'll use tap for zooming - desktop maintains original click behavior
-    if (isMobile) {
-      handleMobileZoom(event);
-    } else {
-      handleDesktopClick(event);
-    }
-  };
-
   const handleMobileZoom = (event) => {
+    // Prevent default to avoid unwanted browser behaviors
+    event.preventDefault();
+    
     const svg = event.currentTarget;
     const svgRect = svg.getBoundingClientRect();
 
@@ -42,11 +38,14 @@ export default function CountryMap({ matchedCountries, children }) {
     const [currentX, currentY, currentWidth, currentHeight] = viewBox.split(' ').map(Number);
 
     // Calculate tap position relative to the current viewBox
-    const tapX = currentX + ((event.clientX || event.touches[0].clientX) - svgRect.left) / svgRect.width * currentWidth;
-    const tapY = currentY + ((event.clientY || event.touches[0].clientY) - svgRect.top) / svgRect.height * currentHeight;
+    const clientX = event.clientX || (event.touches && event.touches[0] ? event.touches[0].clientX : 0);
+    const clientY = event.clientY || (event.touches && event.touches[0] ? event.touches[0].clientY : 0);
+    
+    const tapX = currentX + (clientX - svgRect.left) / svgRect.width * currentWidth;
+    const tapY = currentY + (clientY - svgRect.top) / svgRect.height * currentHeight;
 
-    // Determine the new zoom level
-    let newZoomLevel = zoomLevel * 1.5; // Slightly gentler zoom for mobile
+    // Use same zoom increment as desktop for consistency, but allow higher levels for mobile
+    let newZoomLevel = zoomLevel * 2;
     if (newZoomLevel > maxZoomLevel) {
       newZoomLevel = minZoomLevel; // Reset to initial zoom if max is reached
     }
@@ -126,14 +125,19 @@ export default function CountryMap({ matchedCountries, children }) {
   // Make mobile layout simpler to avoid interactions with keyboard
   if (isMobile) {
     return (
-      <div className="mobile-map-container" style={{height: '100%', width: '100%'}}>
+      <div className="mobile-map-container">
         <style>{`
           .mobile-map-container {
-            width: 100%;
+            width: 100%; 
             height: 100%;
+            min-height: 100px;
+            flex-grow: 1;
             overflow: hidden;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           
           .mobile-map-svg {
@@ -143,13 +147,40 @@ export default function CountryMap({ matchedCountries, children }) {
             touch-action: manipulation;
             user-select: none;
           }
+          
+          /* Simple zoom indicator */
+          .zoom-indicator {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            pointer-events: none;
+          }
+          
+          /* Flash animation for mobile - same as desktop */
+          @keyframes ledFlash {
+            0% { opacity: 0; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.0); }
+            100% { opacity: 0; transform: scale(1.05); }
+          }
         `}</style>
+        
+        {zoomLevel > 1 && (
+          <div className="zoom-indicator">
+            Zoom: {zoomLevel}x
+          </div>
+        )}
+        
         <svg
+          ref={svgRef}
           className="mobile-map-svg"
           viewBox={viewBox}
           onClick={handleMobileZoom}
           onDoubleClick={handleDoubleTouch}
-          onTouchEnd={handleInteraction}
         >
           {countryPaths.map((country) =>
             country.paths.map((path, index) => (
