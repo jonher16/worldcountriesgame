@@ -1,3 +1,4 @@
+// src/screens/GameScreen.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CountryMap from '../components/CountryMap';
@@ -14,15 +15,32 @@ export default function GameScreen() {
   const [showCountryList, setShowCountryList] = useState(false);
   const [showMissingMarkers, setShowMissingMarkers] = useState(false); // Toggle for missing country markers
   const [flashColor, setFlashColor] = useState(null); // 'green' or 'red'
+  const [isMobile, setIsMobile] = useState(false);
 
   const totalCountries = countryData.length;
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
-  // Auto-focus on input when the component mounts
+  // Detect mobile device
   useEffect(() => {
-    inputRef.current?.focus();
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
+
+  // Auto-focus on input when the component mounts (only on desktop)
+  useEffect(() => {
+    if (!isMobile && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isMobile]);
 
   // Clear flash effect after 500ms
   useEffect(() => {
@@ -55,7 +73,14 @@ export default function GameScreen() {
 
   const handleConfirmQuit = () => {
     setShowConfirmation(false);
-    navigate('/stats');
+    navigate('/stats', {
+      state: {
+        score: matchedCountries.length,
+        missed: totalCountries - matchedCountries.length,
+        timeTaken: 720 - timeLeft,
+        matchedCountries: matchedCountries,
+      },
+    });
   };
 
   const handleCancelQuit = () => {
@@ -109,7 +134,7 @@ export default function GameScreen() {
       .sort();
 
     return (
-      <div style={styles.countryListOverlay}>
+      <div style={styles.countryListOverlay} className="country-list-overlay">
         <h3>Country List</h3>
         <ul style={styles.countryList}>
           {sortedCountries.map((countryName) => (
@@ -122,6 +147,244 @@ export default function GameScreen() {
     );
   };
 
+  // Render different layouts for mobile and desktop
+  if (isMobile) {
+    return (
+      <div>
+        {/* Mobile-specific styles */}
+        <style>{`
+          body {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .mobile-game-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+          }
+          
+          .mobile-buttons-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #222;
+            z-index: 10;
+          }
+          
+          .mobile-button {
+            padding: 8px;
+            font-size: 12px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+          }
+          
+          .mobile-timer-row {
+            text-align: center;
+            padding: 5px;
+            background-color: #333;
+            color: white;
+          }
+          
+          .mobile-map-container {
+            flex: 1;
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+          }
+          
+          .mobile-input-container {
+            padding: 10px;
+            background-color: #222;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 10;
+          }
+          
+          .mobile-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+          }
+          
+          .mobile-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          }
+          
+          .mobile-modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+          }
+          
+          .mobile-modal-button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+          }
+          
+          .mobile-country-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 900;
+            overflow: auto;
+            padding: 20px;
+          }
+        `}</style>
+
+        {/* Flash effect */}
+        {flashColor && (
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              border: `3px solid ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
+              borderRadius: '8px',
+              boxShadow: `0 0 20px 10px ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
+              pointerEvents: 'none',
+              opacity: 0,
+              animation: 'ledFlash 2s forwards',
+              zIndex: 9999,
+            }}
+          />
+        )}
+        
+        <div className="mobile-game-container">
+          {/* Top buttons row */}
+          <div className="mobile-buttons-row">
+            <button 
+              className="mobile-button" 
+              onClick={handleEndGameClick}
+            >
+              End Game
+            </button>
+            <button 
+              className="mobile-button" 
+              onClick={toggleMissingMarkers}
+            >
+              Toggle Missing
+            </button>
+            <button 
+              className="mobile-button" 
+              onClick={toggleCountryList}
+            >
+              Toggle List
+            </button>
+          </div>
+          
+          {/* Timer and progress row */}
+          <div className="mobile-timer-row">
+            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+            <Progress total={totalCountries} matched={matchedCountries.length} />
+          </div>
+          
+          {/* Map container */}
+          <div className="mobile-map-container">
+            <CountryMap matchedCountries={matchedCountries}>
+              {showMissingMarkers && renderMissingMarkers()}
+            </CountryMap>
+          </div>
+          
+          {/* Input container at bottom */}
+          <div className="mobile-input-container">
+            <input
+              ref={inputRef}
+              className="mobile-input"
+              placeholder="Enter a country"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
+            />
+          </div>
+        </div>
+        
+        {/* Country list overlay */}
+        {showCountryList && (
+          <div className="mobile-country-list">
+            <h3 style={{color: 'white'}}>Country List</h3>
+            <button 
+              className="mobile-button" 
+              style={{position: 'absolute', top: '10px', right: '10px'}}
+              onClick={toggleCountryList}
+            >
+              Close
+            </button>
+            <ul style={{color: 'white', listStyle: 'none', padding: 0}}>
+              {countryData
+                .map((country) => country.class)
+                .sort()
+                .map((countryName) => (
+                  <li key={countryName} style={{padding: '5px 0', borderBottom: '1px solid #444'}}>
+                    {matchedCountries.includes(countryName) ? countryName : '_____' }
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
+        
+        {/* Confirmation modal */}
+        {showConfirmation && (
+          <div className="mobile-modal">
+            <div className="mobile-modal-content">
+              <p>Are you sure you want to quit? Your game will not be saved.</p>
+              <button 
+                className="mobile-modal-button" 
+                style={{backgroundColor: '#ff4d4f', color: 'white'}}
+                onClick={handleConfirmQuit}
+              >
+                Yes, Quit
+              </button>
+              <button 
+                className="mobile-modal-button" 
+                style={{backgroundColor: '#333', color: 'white'}}
+                onClick={handleCancelQuit}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Desktop layout - original unchanged code
   return (
     <div>
       {/* Flash overlay styles */}
@@ -144,27 +407,6 @@ export default function GameScreen() {
           0% { opacity: 0; transform: scale(0.95); }
           50% { opacity: 1; transform: scale(1.0); }
           100% { opacity: 0; transform: scale(1.05); }
-        }
-        /* MOBILE OVERRIDE: Fix the input so it stays visible */
-        @media (max-width: 600px) {
-          .game-input-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
-            padding: 10px;
-            box-sizing: border-box;
-            z-index: 1000;
-          }
-          .countryListOverlay {
-            width: 100%;
-          }
-          /* Add bottom padding so map isn’t hidden behind the fixed input */
-          .container {
-            padding-bottom: 70px;
-          }
-            
         }
       `}</style>
 
@@ -242,6 +484,7 @@ export default function GameScreen() {
   );
 }
 
+// Original styles for desktop
 const styles = {
   container: {
     padding: '20px',
