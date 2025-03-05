@@ -148,259 +148,276 @@ export default function GameScreen() {
   };
 
   // Render different layouts for mobile and desktop
-  if (isMobile) {
-    return (
-      <div>
-        {/* Mobile-specific styles - REVISED FOR TOP-TO-BOTTOM FLOW */}
-        <style>{`
-          body {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-          }
-          
-          .mobile-game-container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            width: 100vw;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            left: 0;
-          }
-          
-          .mobile-buttons-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px;
-            background-color: #222;
-            flex-shrink: 0;
-          }
-          
-          .mobile-button {
-            padding: 6px 8px;
-            font-size: 12px;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 5px;
-          }
-          
-          .mobile-timer-row {
-            text-align: center;
-            padding: 3px;
-            background-color: #333;
-            color: white;
-            flex-shrink: 0;
-          }
+  // src/screens/GameScreen.jsx (mobile section only)
 
-          /* Reduced timer and progress sizes */
-          .mobile-timer-row p {
-            margin: 2px 0;
-            font-size: 16px !important;
-          }
-          
-          .mobile-input-container {
-            padding: 5px;
-            background-color: #444;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 10;
-          }
-          
-          .mobile-input {
-            width: 100%;
-            padding: 8px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-          }
-          
-          .mobile-map-container {
-            flex-grow: 1;
-            position: relative;
-            overflow: hidden;
-            min-height: 100px; /* Ensure map always has some height */
-          }
-          
-          .mobile-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-          }
-          
-          .mobile-modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 300px;
-            text-align: center;
-          }
-          
-          .mobile-modal-button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-          }
-          
-          .mobile-country-list {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.9);
-            z-index: 900;
-            overflow: auto;
-            padding: 20px;
-          }
-          
-          /* Handle keyboard appearance */
-          @media screen and (max-height: 450px) {
-            /* This media query activates when keyboard appears on most devices */
-            .mobile-map-container {
-              min-height: 50px; /* Reduce map size when keyboard is open */
-            }
-            .mobile-timer-row p {
-              font-size: 14px !important;
-              margin: 0;
-            }
-          }
-        `}</style>
+// Mobile section of GameScreen.jsx
 
-        {/* Flash effect */}
-        {flashColor && (
-          <div
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              border: `3px solid ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
-              borderRadius: '8px',
-              boxShadow: `0 0 20px 10px ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
-              pointerEvents: 'none',
-              opacity: 0,
-              animation: 'ledFlash 2s forwards',
-              zIndex: 9999,
-            }}
-          />
-        )}
+if (isMobile) {
+  return (
+    <div className="mobile-game-wrapper">
+      <style>{`
+        /* Reset and base styles */
+        body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          overflow: hidden;
+        }
         
-        <div className="mobile-game-container">
-          {/* Top buttons row */}
-          <div className="mobile-buttons-row">
-            <button 
-              className="mobile-button" 
-              onClick={handleEndGameClick}
-            >
-              End Game
-            </button>
-            <button 
-              className="mobile-button" 
-              onClick={toggleMissingMarkers}
-            >
-              Toggle Missing
-            </button>
-            <button 
-              className="mobile-button" 
-              onClick={toggleCountryList}
-            >
-              Toggle List
-            </button>
-          </div>
-          
-          {/* Timer and progress row */}
-          <div className="mobile-timer-row">
-            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
-            <Progress total={totalCountries} matched={matchedCountries.length} />
-          </div>
-          
-          {/* Input container ABOVE the map */}
-          <div className="mobile-input-container">
-            <input
-              ref={inputRef}
-              className="mobile-input"
-              placeholder="Enter a country"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
-            />
-          </div>
-          
-          {/* Map container at the bottom - will shrink when keyboard appears */}
-          <div className="mobile-map-container">
-            <CountryMap matchedCountries={matchedCountries}>
-              {showMissingMarkers && renderMissingMarkers()}
-            </CountryMap>
-          </div>
+        .mobile-game-wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #333;
+          overflow: hidden;
+        }
+        
+        /* Top section with controls */
+        .mobile-top-controls {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          background-color: #222;
+        }
+        
+        .mobile-buttons-row {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px;
+        }
+        
+        .mobile-button {
+          padding: 5px 8px;
+          font-size: 12px;
+          background-color: #444;
+          color: white;
+          border: none;
+          border-radius: 5px;
+        }
+        
+        .mobile-timer-row {
+          text-align: center;
+          padding: 2px;
+          background-color: #333;
+          color: white;
+        }
+        
+        .mobile-timer-row p {
+          margin: 2px 0;
+          font-size: 16px !important;
+        }
+        
+        /* Bottom fixed input that truly floats */
+        .mobile-input-container {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 10px;
+          background-color: rgba(51, 51, 51, 0.95);
+          border-top: 1px solid #555;
+          box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+          z-index: 50;
+        }
+        
+        .mobile-input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          box-sizing: border-box;
+        }
+        
+        /* Map container positioned between top controls and bottom input */
+        .mobile-map-container {
+          position: absolute;
+          top: 75px; /* Adjust based on your controls height */
+          left: 0;
+          right: 0;
+          bottom: 60px; /* Adjust based on input height + padding */
+          overflow: hidden;
+        }
+        
+        /* Handle keyboard appearance */
+        @media screen and (max-height: 450px) {
+          .mobile-map-container {
+            bottom: 55px; /* Slightly reduce when keyboard appears */
+          }
+        }
+        
+        /* Overlays and modals */
+        .mobile-country-list {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.9);
+          z-index: 900;
+          overflow: auto;
+          padding: 20px;
+        }
+        
+        .mobile-modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+        
+        .mobile-modal-content {
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          width: 80%;
+          max-width: 300px;
+          text-align: center;
+        }
+        
+        .mobile-modal-button {
+          padding: 10px 20px;
+          margin: 5px;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+        }
+        
+        /* Flash animation for correct/incorrect answers */
+        @keyframes ledFlash {
+          0% { opacity: 0; transform: scale(0.95); }
+          50% { opacity: 1; transform: scale(1.0); }
+          100% { opacity: 0; transform: scale(1.05); }
+        }
+      `}</style>
+
+      {/* Flash effect */}
+      {flashColor && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            border: `3px solid ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
+            borderRadius: '8px',
+            boxShadow: `0 0 20px 10px ${flashColor === 'green' ? '#39FF14' : '#FF3131'}`,
+            pointerEvents: 'none',
+            opacity: 0,
+            animation: 'ledFlash 2s forwards',
+            zIndex: 9999,
+          }}
+        />
+      )}
+      
+      {/* Top controls section */}
+      <div className="mobile-top-controls">
+        <div className="mobile-buttons-row">
+          <button 
+            className="mobile-button" 
+            onClick={handleEndGameClick}
+          >
+            End Game
+          </button>
+          <button 
+            className="mobile-button" 
+            onClick={toggleMissingMarkers}
+          >
+            Toggle Missing
+          </button>
+          <button 
+            className="mobile-button" 
+            onClick={toggleCountryList}
+          >
+            Toggle List
+          </button>
         </div>
         
-        {/* Country list overlay */}
-        {showCountryList && (
-          <div className="mobile-country-list">
-            <h3 style={{color: 'white'}}>Country List</h3>
-            <button 
-              className="mobile-button" 
-              style={{position: 'absolute', top: '10px', right: '10px'}}
-              onClick={toggleCountryList}
-            >
-              Close
-            </button>
-            <ul style={{color: 'white', listStyle: 'none', padding: 0}}>
-              {countryData
-                .map((country) => country.class)
-                .sort()
-                .map((countryName) => (
-                  <li key={countryName} style={{padding: '5px 0', borderBottom: '1px solid #444'}}>
-                    {matchedCountries.includes(countryName) ? countryName : '_____' }
-                  </li>
-                ))}
-            </ul>
-          </div>
-        )}
-        
-        {/* Confirmation modal */}
-        {showConfirmation && (
-          <div className="mobile-modal">
-            <div className="mobile-modal-content">
-              <p>Are you sure you want to quit? Your game will not be saved.</p>
-              <button 
-                className="mobile-modal-button" 
-                style={{backgroundColor: '#ff4d4f', color: 'white'}}
-                onClick={handleConfirmQuit}
-              >
-                Yes, Quit
-              </button>
-              <button 
-                className="mobile-modal-button" 
-                style={{backgroundColor: '#333', color: 'white'}}
-                onClick={handleCancelQuit}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        )}
+        <div className="mobile-timer-row">
+          <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+          <Progress total={totalCountries} matched={matchedCountries.length} />
+        </div>
       </div>
-    );
-  }
+      
+      {/* Map container */}
+      <div className="mobile-map-container">
+        <CountryMap matchedCountries={matchedCountries}>
+          {showMissingMarkers && renderMissingMarkers()}
+        </CountryMap>
+      </div>
+      
+      {/* Fixed floating input at bottom */}
+      <div className="mobile-input-container">
+        <input
+          ref={inputRef}
+          className="mobile-input"
+          placeholder="Enter a country"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
+        />
+      </div>
+      
+      {/* Country list overlay */}
+      {showCountryList && (
+        <div className="mobile-country-list">
+          <h3 style={{color: 'white'}}>Country List</h3>
+          <button 
+            className="mobile-button" 
+            style={{position: 'absolute', top: '10px', right: '10px'}}
+            onClick={toggleCountryList}
+          >
+            Close
+          </button>
+          <ul style={{color: 'white', listStyle: 'none', padding: 0}}>
+            {countryData
+              .map((country) => country.class)
+              .sort()
+              .map((countryName) => (
+                <li key={countryName} style={{padding: '5px 0', borderBottom: '1px solid #444'}}>
+                  {matchedCountries.includes(countryName) ? countryName : '_____' }
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
+      
+      {/* Confirmation modal */}
+      {showConfirmation && (
+        <div className="mobile-modal">
+          <div className="mobile-modal-content">
+            <p>Are you sure you want to quit? Your game will not be saved.</p>
+            <button 
+              className="mobile-modal-button" 
+              style={{backgroundColor: '#ff4d4f', color: 'white'}}
+              onClick={handleConfirmQuit}
+            >
+              Yes, Quit
+            </button>
+            <button 
+              className="mobile-modal-button" 
+              style={{backgroundColor: '#333', color: 'white'}}
+              onClick={handleCancelQuit}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
   // Desktop layout - original unchanged code
   return (
