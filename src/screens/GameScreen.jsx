@@ -283,6 +283,14 @@ if (isMobile) {
           width: 80%;
           max-width: 300px;
           text-align: center;
+          color: #333; /* Add this line to set text color */
+
+        }
+
+        .mobile-modal-content p {
+          color: #333;
+          font-weight: 500;
+          margin-bottom: 15px;
         }
         
         .mobile-modal-button {
