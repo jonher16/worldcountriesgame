@@ -9,7 +9,6 @@ import LoadingScreen from './LoadingScreen'; // Import the LoadingScreen compone
 import { useNavigate } from 'react-router-dom';
 
 export default function RankingScreen() {
-  const [playersData, setPlayersData] = useState([]);
   const [countryPercentages, setCountryPercentages] = useState({});
   const [sortedCountryStats, setSortedCountryStats] = useState([]);
   const [topPlayers, setTopPlayers] = useState([]);
@@ -39,7 +38,6 @@ export default function RankingScreen() {
         docData.date = convertFirestoreTimestampToDate(docData.date);
         data.push(docData);
       });
-      setPlayersData(data);
       calculateTopPlayers(data);
       calculateCountryStats(data);
     } catch (error) {
@@ -135,12 +133,17 @@ export default function RankingScreen() {
               height: 100%;
               margin: 0;
               padding: 0;
-              overflow: auto;
-              -webkit-overflow-scrolling: touch;
+              overflow: hidden;
+              position: fixed;
+              width: 100%;
+              overscroll-behavior: none;
             }
             
             #root {
               height: 100%;
+              width: 100%;
+              position: fixed;
+              overflow: hidden;
             }
             
             .rankings-container {
@@ -151,14 +154,18 @@ export default function RankingScreen() {
               bottom: 0;
               background: #1a1a1a;
               color: #fff;
-              overflow-y: auto;
+              overflow-y: scroll;
               -webkit-overflow-scrolling: touch;
+              -ms-overflow-style: -ms-autohiding-scrollbar;
+              overscroll-behavior-y: contain;
+              touch-action: pan-y;
             }
             
             .rankings-content {
               padding: 20px;
               padding-top: 80px;
               padding-bottom: 60px;
+              -webkit-tap-highlight-color: transparent;
             }
             
             .home-button {
