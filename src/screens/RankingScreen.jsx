@@ -154,7 +154,9 @@ export default function RankingScreen() {
               bottom: 0;
               background: #1a1a1a;
               color: #fff;
-              overflow-y: scroll;
+              overflow-y: auto;
+              scrollbar-width: thin;
+              scrollbar-color: #444 #222;
               -webkit-overflow-scrolling: touch;
               -ms-overflow-style: -ms-autohiding-scrollbar;
               overscroll-behavior-y: contain;
@@ -253,6 +255,24 @@ export default function RankingScreen() {
                 height: auto !important;
                 padding: 20px 10px !important;
               }
+            }
+            
+            /* Scrollbar styling */
+            .rankings-container::-webkit-scrollbar {
+              width: 8px;
+            }
+            
+            .rankings-container::-webkit-scrollbar-track {
+              background: #222;
+            }
+            
+            .rankings-container::-webkit-scrollbar-thumb {
+              background: #444;
+              border-radius: 4px;
+            }
+            
+            .rankings-container::-webkit-scrollbar-thumb:hover {
+              background: #555;
             }
             `}
           </style>

@@ -73,15 +73,12 @@ export default function StatsScreen() {
           margin: 0;
           padding: 0;
           overflow: hidden;
-          position: fixed;
-          width: 100%;
           overscroll-behavior: none;
         }
         
         #root {
           height: 100%;
           width: 100%;
-          position: fixed;
           overflow: hidden;
         }
         
@@ -93,7 +90,9 @@ export default function StatsScreen() {
           bottom: 0;
           background: #1a1a1a;
           color: #fff;
-          overflow-y: scroll;
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #444 #222;
           -webkit-overflow-scrolling: touch;
           -ms-overflow-style: -ms-autohiding-scrollbar;
           overscroll-behavior-y: contain;
@@ -123,6 +122,36 @@ export default function StatsScreen() {
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
           transition: all 0.3s ease;
         }
+
+        /* Scrollbar styling */
+        .stats-container::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        .stats-container::-webkit-scrollbar-track {
+          background: #222;
+        }
+        
+        .stats-container::-webkit-scrollbar-thumb {
+          background: #444;
+          border-radius: 4px;
+        }
+        
+        .stats-container::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
+        /* Submit button hover effect */
+        .submit-button:not(:disabled):hover {
+          background: linear-gradient(135deg, #2980b9, #3498db) !important;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .submit-button:not(:disabled):active {
+          transform: translateY(1px);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+        }
         `}
       </style>
 
@@ -141,47 +170,16 @@ export default function StatsScreen() {
         <div className="stats-content">
           {/* Global styles for the stats screen */}
           <style>{`
-            body, html {
-              margin: 0;
-              padding: 0;
-              height: 100%;
-              width: 100%;
-              background-color: #1a1a1a;
-              color: #fff;
-              font-family: Arial, sans-serif;
-            }
-            
             * {
               box-sizing: border-box;
             }
             
             /* Remove the scrolling properties from nested containers */
-            .countriesGrid {
+            .countriesGrid, 
+            .countries-grid, 
+            .country-list-container {
               overflow: visible !important;
               max-height: none !important;
-            }
-            
-            /* Custom scrollbar for country lists */
-            .countries-grid::-webkit-scrollbar,
-            .country-list-container::-webkit-scrollbar {
-              width: 8px;
-            }
-            
-            .countries-grid::-webkit-scrollbar-track,
-            .country-list-container::-webkit-scrollbar-track {
-              background: #222;
-              border-radius: 4px;
-            }
-            
-            .countries-grid::-webkit-scrollbar-thumb,
-            .country-list-container::-webkit-scrollbar-thumb {
-              background: #444;
-              border-radius: 4px;
-            }
-            
-            .countries-grid::-webkit-scrollbar-thumb:hover,
-            .country-list-container::-webkit-scrollbar-thumb:hover {
-              background: #555;
             }
             
             /* Animation for country items */
@@ -198,14 +196,8 @@ export default function StatsScreen() {
             
             /* Input focus effect */
             .stats-input:focus {
-              border-color: #8A2BE2;
-              box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
-            }
-            
-            /* Submit button hover effect */
-            .submit-button:not(:disabled):hover {
-              border-color: #8A2BE2;
-              transform: translateY(-2px);
+              border-color: #3498db;
+              box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
             }
             
             .saveScoreForm {
@@ -833,36 +825,43 @@ const styles = {
   },
   submitButton: {
     padding: '12px 25px',
-    backgroundColor: '#8A2BE2',
+    background: 'linear-gradient(135deg, #3498db, #2980b9)',
     color: '#fff',
-    border: '2px solid transparent',
+    border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     fontSize: '16px',
     fontWeight: 'bold',
     transition: 'all 0.3s ease',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 -3px 0 rgba(0, 0, 0, 0.2)',
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
+    position: 'relative',
+    overflow: 'hidden',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
   buttonDisabled: {
     padding: '12px 25px',
-    backgroundColor: '#555',
-    color: '#ccc',
-    border: '2px solid transparent',
+    background: 'linear-gradient(135deg, #555, #444)',
+    color: '#aaa',
+    border: 'none',
     borderRadius: '8px',
     cursor: 'not-allowed',
     fontSize: '16px',
     fontWeight: 'bold',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
     opacity: 0.7,
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
   successNotification: {
     position: 'fixed',
     bottom: '30px',
     left: '50%',
     transform: 'translateX(-50%)',
-    backgroundColor: 'rgba(140, 255, 140, 0.9)',
-    color: '#333',
+    backgroundColor: 'rgba(52, 152, 219, 0.9)',
+    color: '#fff',
     borderRadius: '8px',
     padding: '15px 25px',
     display: 'flex',
