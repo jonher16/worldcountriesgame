@@ -1,5 +1,5 @@
 // src/screens/GameScreen.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CountryMap from '../components/CountryMap';
 import Timer from '../components/Timer';
@@ -16,6 +16,7 @@ export default function GameScreen() {
   const [showMissingMarkers, setShowMissingMarkers] = useState(false); // Toggle for missing country markers
   const [flashColor, setFlashColor] = useState(null); // 'green' or 'red'
   const [isMobile, setIsMobile] = useState(false);
+  const [keyboardVisible, setKeyboardVisible] = useState(false);
 
   const totalCountries = countryData.length;
   const navigate = useNavigate();
@@ -34,6 +35,20 @@ export default function GameScreen() {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+  // Detect keyboard visibility on mobile
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const detectKeyboard = () => {
+      // A significant height change can indicate keyboard appearance
+      const isKeyboardVisible = window.innerHeight < window.outerHeight * 0.75;
+      setKeyboardVisible(isKeyboardVisible);
+    };
+
+    window.addEventListener('resize', detectKeyboard);
+    return () => window.removeEventListener('resize', detectKeyboard);
+  }, [isMobile]);
 
   // Auto-focus on input when the component mounts (only on desktop)
   useEffect(() => {
@@ -161,7 +176,9 @@ if (isMobile) {
           margin: 0;
           padding: 0;
           height: 100%;
+          width: 100%;
           overflow: hidden;
+          position: fixed;
         }
         
         .mobile-game-wrapper {
@@ -172,6 +189,8 @@ if (isMobile) {
           height: 100%;
           background-color: #333;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
         
         /* Top section with controls */
@@ -182,6 +201,7 @@ if (isMobile) {
           right: 0;
           z-index: 10;
           background-color: #222;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         
         .mobile-buttons-row {
@@ -197,6 +217,12 @@ if (isMobile) {
           color: white;
           border: none;
           border-radius: 5px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+          transition: background-color 0.2s;
+        }
+        
+        .mobile-button:active {
+          background-color: #555;
         }
         
         .mobile-timer-row {
@@ -211,7 +237,7 @@ if (isMobile) {
           font-size: 16px !important;
         }
         
-        /* Bottom fixed input that truly floats */
+        /* Bottom fixed input that stays in position regardless of keyboard */
         .mobile-input-container {
           position: fixed;
           left: 0;
@@ -222,15 +248,7 @@ if (isMobile) {
           border-top: 1px solid #555;
           box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
           z-index: 50;
-        }
-        
-        .mobile-input {
-          width: 100%;
-          padding: 10px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          box-sizing: border-box;
+          transition: transform 0.3s ease-out;
         }
         
         /* Map container positioned between top controls and bottom input */
@@ -241,15 +259,9 @@ if (isMobile) {
           right: 0;
           bottom: 60px; /* Adjust based on input height + padding */
           overflow: hidden;
+          z-index: 5;
         }
-        
-        /* Handle keyboard appearance */
-        @media screen and (max-height: 450px) {
-          .mobile-map-container {
-            bottom: 55px; /* Slightly reduce when keyboard appears */
-          }
-        }
-        
+                
         /* Overlays and modals */
         .mobile-country-list {
           position: fixed;
@@ -261,6 +273,7 @@ if (isMobile) {
           z-index: 900;
           overflow: auto;
           padding: 20px;
+          -webkit-overflow-scrolling: touch;
         }
         
         .mobile-modal {
@@ -283,8 +296,8 @@ if (isMobile) {
           width: 80%;
           max-width: 300px;
           text-align: center;
-          color: #333; /* Add this line to set text color */
-
+          color: #333;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .mobile-modal-content p {
@@ -299,6 +312,19 @@ if (isMobile) {
           border: none;
           border-radius: 5px;
           font-weight: bold;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          transition: transform 0.1s, background-color 0.2s;
+        }
+        
+        .mobile-modal-button:active {
+          transform: scale(0.98);
+        }
+        
+        /* Adjust for taller devices to maximize map space */
+        @media screen and (min-height: 700px) {
+          .mobile-map-container {
+            bottom: 70px;
+          }
         }
         
         /* Flash animation for correct/incorrect answers */
@@ -365,8 +391,13 @@ if (isMobile) {
         </CountryMap>
       </div>
       
-      {/* Fixed floating input at bottom */}
-      <div className="mobile-input-container">
+      {/* Fixed floating input at bottom that isn't affected by keyboard */}
+      <div 
+        className="mobile-input-container"
+        style={{
+          transform: keyboardVisible ? 'translateY(-10px)' : 'translateY(0)',
+        }}
+      >
         <input
           ref={inputRef}
           className="mobile-input"
@@ -374,13 +405,27 @@ if (isMobile) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleCountrySubmit()}
+          onFocus={() => {
+            // On iOS, scroll the page a bit to ensure the input is visible
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+            }, 100);
+          }}
+          style={{
+            width: '100%',
+            padding: '10px',
+            fontSize: '16px',
+            border: 'none',
+            borderRadius: '5px',
+            boxSizing: 'border-box',
+          }}
         />
       </div>
       
       {/* Country list overlay */}
       {showCountryList && (
         <div className="mobile-country-list">
-          <h3 style={{color: 'white'}}>Country List</h3>
+          <h3 style={{color: 'white', marginTop: '5px'}}>Country List</h3>
           <button 
             className="mobile-button" 
             style={{position: 'absolute', top: '10px', right: '10px'}}
@@ -388,7 +433,7 @@ if (isMobile) {
           >
             Close
           </button>
-          <ul style={{color: 'white', listStyle: 'none', padding: 0}}>
+          <ul style={{color: 'white', listStyle: 'none', padding: 0, maxHeight: '80vh', overflowY: 'auto'}}>
             {countryData
               .map((country) => country.class)
               .sort()

@@ -127,141 +127,249 @@ export default function RankingScreen() {
       {loading ? (
         <LoadingScreen /> // Show LoadingScreen while data is loading
       ) : (
-        <div style={styles.container}>
-          {/* Back to Main Screen Button */}
-          <button
-            style={styles.backButton}
-            onClick={() => navigate('/')}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#8A2BE2')}
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.borderColor = 'transparent')
+        <>
+          {/* CSS for responsive design and consistent scrolling */}
+          <style>
+            {`
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              overflow: auto;
+              -webkit-overflow-scrolling: touch;
             }
+            
+            #root {
+              height: 100%;
+            }
+            
+            .rankings-container {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: #1a1a1a;
+              color: #fff;
+              overflow-y: auto;
+              -webkit-overflow-scrolling: touch;
+            }
+            
+            .rankings-content {
+              padding: 20px;
+              padding-top: 80px;
+              padding-bottom: 60px;
+            }
+            
+            .home-button {
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              z-index: 100;
+              padding: 12px 25px;
+              font-size: 16px;
+              background-color: #333;
+              color: #fff;
+              border: 2px solid transparent;
+              border-radius: 8px;
+              cursor: pointer;
+              font-weight: bold;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+              transition: all 0.3s ease;
+            }
+            
+            .top50-wrapper {
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            @media (max-width: 768px) {
+              .rankings-content {
+                padding: 15px;
+                padding-top: 70px;
+                padding-bottom: 40px;
+              }
+              
+              .top50-item {
+                flex-wrap: wrap !important;
+              }
+              
+              .top50-rank {
+                width: 10% !important;
+              }
+              
+              .top50-name {
+                width: 90% !important;
+                margin-bottom: 5px !important;
+              }
+              
+              .top50-score {
+                width: 40% !important;
+                text-align: left !important;
+              }
+              
+              .top50-time {
+                width: 60% !important;
+                text-align: right !important;
+              }
+              
+              .top50-date {
+                width: 100% !important;
+                text-align: left !important;
+                margin-top: 5px !important;
+              }
+              
+              .section-title {
+                font-size: 26px !important;
+              }
+              
+              .main-title {
+                font-size: 32px !important;
+                margin-bottom: 30px !important;
+              }
+              
+              .podium-container {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
+              }
+              
+              .podium-place {
+                width: 80% !important;
+                max-width: 250px !important;
+                height: auto !important;
+                padding: 15px 10px !important;
+              }
+              
+              .place1, .place2, .place3 {
+                height: auto !important;
+                padding: 20px 10px !important;
+              }
+            }
+            `}
+          </style>
+
+          {/* Home button - outside scrollable area */}
+          <button 
+            className="home-button"
+            onClick={() => navigate('/')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#e6c200'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
           >
             Home
           </button>
-
-          {/* Animated Header */}
-          <motion.h1
-            style={styles.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            🏆 <span style={styles.titleHighlight}>Global Rankings</span> 🏆
-          </motion.h1>
-
-          {/* Podium Animation */}
-          <div style={styles.podiumContainer}>
-            {topPlayers.map((player, index) => (
-              <motion.div
-                key={index}
-                style={{
-                  ...styles.podiumPlace,
-                  ...styles[`place${index + 1}`],
-                }}
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.3 }}
+          
+          {/* Main scrollable container */}
+          <div className="rankings-container">
+            <div className="rankings-content">
+              {/* Animated Header */}
+              <motion.h1
+                style={styles.title}
+                className="main-title"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
               >
-                <h2 style={styles.placeTitle}>{index + 1}</h2>
-                <p style={styles.playerName}>{player.name}</p>
-                <p style={styles.playerScore}>
-                  Score: {player.score}
-                  <br />
-                  Time: {formatTime(player.timeTaken)}
-                </p>
-                <p style={styles.playerDatePodium}>
-                  Date: {formatDate(player.date)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+                🏆 <span style={styles.titleHighlight}>Global Rankings</span> 🏆
+              </motion.h1>
 
-          {/* Top 50 Ranking */}
-          <div style={styles.top50Container}>
-            <h2 style={styles.sectionTitle}>Top 50 Players</h2>
-            <ul style={styles.top50List}>
-              {top50Players.map((player, index) => (
-                <li key={index} style={styles.top50Item}>
-                  <span style={styles.top50Rank}>{index + 1}.</span>
-                  <span style={styles.top50Name}>{player.name}</span>
-                  <span style={styles.top50Score}>Score: {player.score}</span>
-                  <span style={styles.top50Time}>
-                    Time: {formatTime(player.timeTaken)}
-                  </span>
-                  <span style={styles.top50Date}>
-                    {formatDate(player.date)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {/* Podium Animation */}
+              <div style={styles.podiumContainer} className="podium-container">
+                {topPlayers.map((player, index) => (
+                  <motion.div
+                    key={index}
+                    style={{
+                      ...styles.podiumPlace,
+                      ...styles[`place${index + 1}`],
+                    }}
+                    className={`podium-place place${index + 1}`}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.3 }}
+                  >
+                    <h2 style={styles.placeTitle}>{index + 1}</h2>
+                    <p style={styles.playerName}>{player.name}</p>
+                    <p style={styles.playerScore}>
+                      Score: {player.score}
+                      <br />
+                      Time: {formatTime(player.timeTaken)}
+                    </p>
+                    <p style={styles.playerDatePodium}>
+                      Date: {formatDate(player.date)}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
 
-          {/* Heatmap */}
-          <div style={styles.heatmapContainer}>
-            <h2 style={styles.sectionTitle}>🔥 Country Heatmap 🔥</h2>
-            <HeatMap heatmapData={countryPercentages} />
-          </div>
+              {/* Top 50 Ranking */}
+              <div style={styles.top50Container}>
+                <h2 style={styles.sectionTitle} className="section-title">Top 50 Players</h2>
+                <div className="top50-wrapper">
+                  <ul style={styles.top50List}>
+                    {top50Players.map((player, index) => (
+                      <li key={index} style={styles.top50Item} className="top50-item">
+                        <span style={styles.top50Rank} className="top50-rank">{index + 1}.</span>
+                        <span style={styles.top50Name} className="top50-name">{player.name}</span>
+                        <span style={styles.top50Score} className="top50-score">Score: {player.score}</span>
+                        <span style={styles.top50Time} className="top50-time">
+                          Time: {formatTime(player.timeTaken)}
+                        </span>
+                        <span style={styles.top50Date} className="top50-date">
+                          {formatDate(player.date)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
 
-          {/* Country Statistics */}
-          <div style={styles.countryStatsContainer}>
-            <h2 style={styles.sectionTitle}>📊 Country Accuracy 📊</h2>
-            <ul style={styles.countryStatsList}>
-              {sortedCountryStats.map(([countryName, percentage]) => (
-                <li
-                  key={countryName}
-                  style={{
-                    ...styles.countryStatItem,
-                    backgroundColor: getColorForPercentage(percentage),
-                  }}
-                >
-                  <span style={styles.countryName}>{countryName}</span>
-                  <span style={styles.countryPercentage}>
-                    {percentage.toFixed(1)}%
-                  </span>
-                </li>
-              ))}
-            </ul>
+              {/* Heatmap */}
+              <div style={styles.heatmapContainer}>
+                <h2 style={styles.sectionTitle} className="section-title">🔥 Country Heatmap 🔥</h2>
+                <div style={styles.heatmapWrapper}>
+                  <HeatMap heatmapData={countryPercentages} />
+                </div>
+              </div>
+
+              {/* Country Statistics */}
+              <div style={styles.countryStatsContainer}>
+                <h2 style={styles.sectionTitle} className="section-title">📊 Country Accuracy 📊</h2>
+                <ul style={styles.countryStatsList}>
+                  {sortedCountryStats.map(([countryName, percentage]) => (
+                    <li
+                      key={countryName}
+                      style={{
+                        ...styles.countryStatItem,
+                        backgroundColor: getColorForPercentage(percentage),
+                      }}
+                      className="country-stats-item"
+                    >
+                      <span style={styles.countryName}>{countryName}</span>
+                      <span style={styles.countryPercentage}>
+                        {percentage.toFixed(1)}%
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
 }
 
 const styles = {
-  container: {
-    padding: '20px',
-    background: '#333',
-    color: '#fff',
-    minHeight: '100vh',
-    fontFamily: 'Arial, sans-serif',
-    boxSizing: 'border-box',
-    overflowY: 'auto',
-    width: '100vw',
-    position: 'relative', // For backButton positioning
-    maxHeight: '100vh'
-  },
-  backButton: {
-    position: 'fixed',
-    top: '20px',
-    right: '20px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#444',
-    color: '#fff',
-    border: '2px solid transparent',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'border-color 0.3s ease',
-    zIndex: 1000,
-  },
   title: {
-    fontSize: '48px',
+    fontSize: '42px',
     textAlign: 'center',
     marginBottom: '40px',
+    marginTop: '20px',
+    fontWeight: 'bold',
   },
   titleHighlight: {
-    color: '#7dd87d',
+    color: '#e6c200', // Gold color that matches the main theme
   },
   podiumContainer: {
     display: 'flex',
@@ -273,75 +381,80 @@ const styles = {
   },
   podiumPlace: {
     width: '180px',
-    background: '#444',
     textAlign: 'center',
-    padding: '10px',
-    borderRadius: '10px 10px 0 0',
+    padding: '20px 10px',
+    borderRadius: '10px',
     color: '#fff',
     position: 'relative',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+    transition: 'transform 0.3s ease',
   },
   place1: {
     height: '350px',
-    background: '#ffd700', // Gold
+    background: 'linear-gradient(to bottom, #ffd700, #e6c200)', // Gold gradient
     zIndex: 3,
   },
   place2: {
     height: '300px',
-    background: '#c0c0c0', // Silver
+    background: 'linear-gradient(to bottom, #c0c0c0, #a0a0a0)', // Silver gradient
     zIndex: 2,
   },
   place3: {
     height: '250px',
-    background: '#cd7f32', // Bronze
+    background: 'linear-gradient(to bottom, #cd7f32, #a56727)', // Bronze gradient
     zIndex: 1,
   },
   placeTitle: {
     fontSize: '28px',
-    marginBottom: '5px',
+    marginBottom: '10px',
   },
   playerName: {
     fontSize: '22px',
-    marginBottom: '5px',
+    marginBottom: '15px',
     fontWeight: 'bold',
   },
   playerScore: {
     fontSize: '18px',
+    lineHeight: '1.5',
   },
   playerDatePodium: {
     fontSize: '16px',
-    marginTop: '5px',
-    color: 'white',
+    marginTop: '15px',
+    color: 'rgba(255, 255, 255, 0.8)',
   },
   top50Container: {
     marginBottom: '60px',
-    overflowX: 'auto',
   },
   sectionTitle: {
     fontSize: '32px',
     textAlign: 'center',
     marginBottom: '30px',
+    fontWeight: 'bold',
   },
   top50List: {
     listStyleType: 'none',
     padding: 0,
     margin: 0,
-    // Removed minWidth: '600px' for a responsive layout on mobile
+    width: '100%',
   },
   top50Item: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px',
-    background: '#444',
-    marginBottom: '5px',
-    borderRadius: '5px',
+    padding: '12px 15px',
+    background: '#333',
+    marginBottom: '2px',
+    borderLeft: '3px solid #e6c200', // Gold color to match main theme
+    transition: 'background-color 0.2s ease',
   },
   top50Rank: {
     width: '5%',
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   top50Name: {
     width: '25%',
+    fontWeight: 'bold',
   },
   top50Score: {
     width: '20%',
@@ -360,6 +473,13 @@ const styles = {
   heatmapContainer: {
     marginBottom: '60px',
   },
+  heatmapWrapper: {
+    borderRadius: '8px',
+    overflow: 'hidden',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    background: '#333',
+    padding: '15px',
+  },
   countryStatsContainer: {
     marginBottom: '60px',
   },
@@ -367,14 +487,18 @@ const styles = {
     listStyleType: 'none',
     padding: 0,
     margin: 0,
+    borderRadius: '8px',
+    overflow: 'hidden',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   },
   countryStatItem: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '8px',
-    marginBottom: '2px',
-    borderRadius: '5px',
-    color: '#fff',
+    padding: '10px 15px',
+    marginBottom: '1px',
+    color: '#333', // Dark text for better contrast on colored backgrounds
+    fontWeight: '500',
+    transition: 'transform 0.2s ease',
   },
   countryName: {
     width: '70%',
@@ -382,5 +506,6 @@ const styles = {
   countryPercentage: {
     width: '30%',
     textAlign: 'right',
+    fontWeight: 'bold',
   },
 };

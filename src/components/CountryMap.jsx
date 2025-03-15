@@ -1,5 +1,6 @@
 // src/components/CountryMap.jsx
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import countryPaths from '../assets/updated_grouped_country_paths.json';
 
 export default function CountryMap({ matchedCountries, children }) {
@@ -114,14 +115,6 @@ export default function CountryMap({ matchedCountries, children }) {
     setViewBox("0 0 2000 857");
   };
 
-  const handleDoubleTouch = () => {
-    // Reset zoom level on double tap for mobile
-    if (isMobile) {
-      setZoomLevel(minZoomLevel);
-      setViewBox("0 0 2000 857");
-    }
-  };
-
   // Make mobile layout simpler to avoid interactions with keyboard
   if (isMobile) {
     return (
@@ -138,6 +131,7 @@ export default function CountryMap({ matchedCountries, children }) {
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
           }
           
           .mobile-map-svg {
@@ -146,6 +140,9 @@ export default function CountryMap({ matchedCountries, children }) {
             display: block;
             touch-action: manipulation;
             user-select: none;
+            position: absolute;
+            top: 0;
+            left: 0;
           }
           
           /* Simple zoom indicator */
@@ -159,6 +156,25 @@ export default function CountryMap({ matchedCountries, children }) {
             border-radius: 3px;
             font-size: 12px;
             pointer-events: none;
+            z-index: 10;
+          }
+          
+          /* Touch interaction instruction indicator */
+          .touch-instructions {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.8;
+            white-space: nowrap;
+            transition: opacity 0.3s;
           }
           
           /* Flash animation for mobile - same as desktop */
@@ -175,12 +191,27 @@ export default function CountryMap({ matchedCountries, children }) {
           </div>
         )}
         
+        {zoomLevel === 1 && (
+          <div className="touch-instructions">
+            Tap to zoom in, double-tap to reset
+          </div>
+        )}
+        
         <svg
           ref={svgRef}
           className="mobile-map-svg"
           viewBox={viewBox}
           onClick={handleMobileZoom}
-          onDoubleClick={handleDoubleTouch}
+          onDoubleClick={() => {
+            setZoomLevel(minZoomLevel);
+            setViewBox("0 0 2000 857");
+          }}
+          onTouchStart={(e) => {
+            // Prevent default browser behaviors like scrolling
+            if (e.touches.length === 1) {
+              e.preventDefault();
+            }
+          }}
         >
           {countryPaths.map((country) =>
             country.paths.map((path, index) => (
@@ -225,6 +256,12 @@ export default function CountryMap({ matchedCountries, children }) {
     </div>
   );
 }
+
+// Add PropTypes for component props
+CountryMap.propTypes = {
+  matchedCountries: PropTypes.array.isRequired,
+  children: PropTypes.node
+};
 
 const styles = {
   container: {
